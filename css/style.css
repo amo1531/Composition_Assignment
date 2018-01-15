@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-color: #FFF;
+  font-family: "Source Sans Pro", arial, helvetica, sans-serif; }
+
+img {
+  padding: 0;
+  margin: 0; }
+
+h1, h2, h3, h4, h5 {
+  font-style: none;
+  padding: 0;
+  margin: 0; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+input {
+  padding: 0;
+  margin: 0;
+  border-radius: 0; }
+
+span {
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  margin: 0;
+  padding: 0; }
+
+input, button {
+  margin: 0;
+  padding: 0; }
+
+.body_wrapper {
+  padding: 20px; }
+  .body_wrapper .composition .composition_heading {
+    font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+    font-size: 16px;
+    color: #222;
+    background: #ecf2f4;
+    padding: 7px 10px;
+    margin: 7px 0; }
+    .body_wrapper .composition .composition_heading h4 {
+      font-weight: normal; }
+  .body_wrapper .composition .composition_info p {
+    padding: 10px 0 0;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 20px; }
+  .body_wrapper .composition .composition_image {
+    height: 300px;
+    position: relative;
+    min-height: 300px; }
+    .body_wrapper .composition .composition_image .composition_canvasLines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 300px;
+      width: 300px; }
+    .body_wrapper .composition .composition_image .composition_imageLink {
+      position: absolute;
+      height: 13px;
+      width: 13px;
+      border-radius: 50%;
+      background: url("../Images/dot.svg") no-repeat center center; }
+    .body_wrapper .composition .composition_image .lable_list {
+      position: absolute;
+      top: 31px;
+      left: 298px; }
+    .body_wrapper .composition .composition_image .lable_listItem {
+      list-style-type: none;
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      border: 1px solid #999999;
+      color: #999999;
+      margin-bottom: 18px;
+      text-align: center;
+      font-size: 13px; }
+      .body_wrapper .composition .composition_image .lable_listItem .list_link {
+        text-align: center; }
+    .body_wrapper .composition .composition_image .lable_listItem:hover {
+      background-color: #808080;
+      color: #fff; }
+
+/*# sourceMappingURL=style.css.map */
