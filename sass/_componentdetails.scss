@@ -1,0 +1,58 @@
+.componentDetails {
+	position: relative;
+	padding:15px 20px 15px 35px;
+	border-top: 2px solid #EE7D11;
+	background: #f8f8f8;
+	.circleIndex {
+		   position: absolute;
+		   top: 20px;
+		   left:5px;
+		   height: 18px;
+		   width: 18px;
+		   border-radius: 50%;
+		   border: 1px solid #999999 ;
+		   color: #999999 ;
+		   margin-bottom: 18px;
+		   text-align: center;
+		   font-size: 13px;
+		&:hover {
+			background-color: #808080 ;
+			color: #fff;
+		}
+	}
+
+	.componentsHeading {
+		h3 {
+			padding: 0 25px 10px 0;
+		    margin-bottom: 10px;
+		    line-height: 1.3;
+		    font-weight: 100;
+		    font-family: Lora, Palatino, Times, Times New Roman, serif;
+		}
+		.crossButton {
+			position: absolute;
+			top:20px;
+			right: 10px;
+			text-decoration: none;
+			height: 18px;
+			width: 18px;
+			background: url("../Images/cross.png") no-repeat center center;
+			background-size: contain;
+		}
+	}
+	.componentDetails_Wrapper {
+		border-top: 1px solid #d8d8d8;
+		.components_Property {
+			margin-top: 20px;
+			.property_Name {
+				display: block;
+				margin-bottom: 4px;
+				font-size: 12px;
+			}
+			.property_Value {
+				font-size: 12px;
+			}
+		}
+	}
+}
+

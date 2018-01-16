@@ -83,10 +83,54 @@ input, button {
       margin-bottom: 18px;
       text-align: center;
       font-size: 13px; }
-      .body_wrapper .composition .composition_image .lable_listItem .list_link {
-        text-align: center; }
     .body_wrapper .composition .composition_image .lable_listItem:hover {
       background-color: #808080;
       color: #fff; }
+
+.componentDetails {
+  position: relative;
+  padding: 15px 20px 15px 35px;
+  border-top: 2px solid #EE7D11;
+  background: #f8f8f8; }
+  .componentDetails .circleIndex {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    color: #999999;
+    margin-bottom: 18px;
+    text-align: center;
+    font-size: 13px; }
+    .componentDetails .circleIndex:hover {
+      background-color: #808080;
+      color: #fff; }
+  .componentDetails .componentsHeading h3 {
+    padding: 0 25px 10px 0;
+    margin-bottom: 10px;
+    line-height: 1.3;
+    font-weight: 100;
+    font-family: Lora, Palatino, Times, Times New Roman, serif; }
+  .componentDetails .componentsHeading .crossButton {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    text-decoration: none;
+    height: 18px;
+    width: 18px;
+    background: url("../Images/cross.png") no-repeat center center;
+    background-size: contain; }
+  .componentDetails .componentDetails_Wrapper {
+    border-top: 1px solid #d8d8d8; }
+    .componentDetails .componentDetails_Wrapper .components_Property {
+      margin-top: 20px; }
+      .componentDetails .componentDetails_Wrapper .components_Property .property_Name {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 12px; }
+      .componentDetails .componentDetails_Wrapper .components_Property .property_Value {
+        font-size: 12px; }
 
 /*# sourceMappingURL=style.css.map */
