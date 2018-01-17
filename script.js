@@ -24,22 +24,24 @@ $(document).ready(function() {
 	c.lineTo(324.5,77);
 	c.stroke();
 
-	$(".crossButton").on("click",function() {
-			$(this).css({"display":"none"});
-			$(this).parent().parent().css({"border-top":"none"});
-			$(this).parent().parent().css({"border-bottom":"1px solid #d8d8d8;"});
-			$(this).parent().siblings(".componentDetails_Wrapper").css({"display":"none"});
+	
+	$('#firstComponent').addClass('componentDetails--disable');
+	$('.crossButton').on('click', function (e) {
 
+		e.preventDefault();
+		$('#firstComponent').removeClass('componentDetails--disable');
+		$(this).parent().parent().addClass('componentDetails--disable');
+		$(this).parent().find(".componentDetails_wrapper").css("display","none");
+		$(this).css("display","none");
 	});
+
 	$(".componentsHeading h3").on("click",function(){
-			$(this).parent().siblings(".componentDetails_Wrapper").css({"display":"block"});
-			$(this).siblings(".crossButton").css({"display":"block"});
-			$(this).parent().parent().css({"border-top":"2px solid #EE7D11"});
-			$(this).parent().parent().css({"border-bottom":"none"});
+		$(this).parent().parent().removeClass("componentDetails--disable");
+		$(this).siblings('a').css("display","block");
 
 	});
-});
 
+});
 
 
 

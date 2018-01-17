@@ -94,7 +94,6 @@ input, button {
   background: #f8f8f8; }
   .componentDetails .circleIndex {
     position: absolute;
-    top: 20px;
     left: 5px;
     height: 18px;
     width: 18px;
@@ -120,17 +119,38 @@ input, button {
     text-decoration: none;
     height: 18px;
     width: 18px;
+    cursor: pointer;
     background: url("../Images/cross.png") no-repeat center center;
     background-size: contain; }
-  .componentDetails .componentDetails_Wrapper {
+  .componentDetails .componentDetails_wrapper {
     border-top: 1px solid #d8d8d8; }
-    .componentDetails .componentDetails_Wrapper .components_Property {
+    .componentDetails .componentDetails_wrapper .components_property {
       margin-top: 20px; }
-      .componentDetails .componentDetails_Wrapper .components_Property .property_Name {
+      .componentDetails .componentDetails_wrapper .components_property .property_name {
         display: block;
         margin-bottom: 4px;
         font-size: 12px; }
-      .componentDetails .componentDetails_Wrapper .components_Property .property_Value {
+      .componentDetails .componentDetails_wrapper .components_property .property_value {
         font-size: 12px; }
+  .componentDetails.componentDetails--disable {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #d8d8d8;
+    height: auto; }
+    .componentDetails.componentDetails--disable .componentsHeading h3 {
+      font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+      font-size: 13px;
+      color: #069;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border: none;
+      cursor: pointer; }
+    .componentDetails.componentDetails--disable .componentsHeading a {
+      display: none; }
+    @media screen and (min-width: 320px) {
+      .componentDetails.componentDetails--disable .RemoveBottomBorder {
+        border-bottom: none; } }
+    .componentDetails.componentDetails--disable .componentDetails_wrapper {
+      display: none; }
 
 /*# sourceMappingURL=style.css.map */

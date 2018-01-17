@@ -5,7 +5,7 @@
 	background: #f8f8f8;
 	.circleIndex {
 		   position: absolute;
-		   top: 20px;
+		   // top: 20px;
 		   left:5px;
 		   height: 18px;
 		   width: 18px;
@@ -36,23 +36,54 @@
 			text-decoration: none;
 			height: 18px;
 			width: 18px;
+			cursor: pointer;;
 			background: url("../Images/cross.png") no-repeat center center;
 			background-size: contain;
 		}
 	}
-	.componentDetails_Wrapper {
+	.componentDetails_wrapper {
 		border-top: 1px solid #d8d8d8;
-		.components_Property {
+		.components_property {
 			margin-top: 20px;
-			.property_Name {
+			.property_name {
 				display: block;
 				margin-bottom: 4px;
 				font-size: 12px;
 			}
-			.property_Value {
+			.property_value {
 				font-size: 12px;
 			}
 		}
 	}
+	&.componentDetails--disable{
+		background: none;
+	    border: none;
+	    border-bottom: 1px solid #d8d8d8;
+	    height: auto;
+	    .componentsHeading {
+	    	h3 {
+		    font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+		    font-size: 13px;
+		    color: #069;
+		    margin-bottom: 0;
+		    padding-bottom: 0;
+		    border: none;
+		    cursor: pointer;
+		    }
+		    a{
+		    	display: none;
+		    }
+		}
+		    
+		    	@include media-query(mobile) {
+		    	.RemoveBottomBorder{
+		    		border-bottom: none;
+		    	}
+		    }
+		    .componentDetails_wrapper{
+		    	display: none;
+		 }
+	}
 }
+
 
