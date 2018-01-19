@@ -83,6 +83,10 @@ input, button {
       margin-bottom: 18px;
       text-align: center;
       font-size: 13px; }
+    .body_wrapper .composition_image .active {
+      background: #666;
+      border-color: #666;
+      color: #fff; }
 
 .composition .componentDetails {
   position: relative;

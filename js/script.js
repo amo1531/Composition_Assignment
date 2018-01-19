@@ -23,14 +23,29 @@
     c.lineTo(324.5, 77);
     c.stroke();
     $('#firstComponent').addClass('componentDetails--disable');
+    $('#itemOne').on("click", function() {
+      $('.composition').find('.componentDetails').addClass("componentDetails--disable");
+      $('.composition').find('#firstComponentDiv').removeClass("componentDetails--disable");
+      $('.lable_list li').removeClass("active");
+      return $(this).addClass("active");
+    });
     $('#itemTwo').on("click", function() {
-      return $('.composition').find('#secondComponentDiv').removeClass("componentDetails--disable");
+      $('.composition').find('.componentDetails').addClass("componentDetails--disable");
+      $('.composition').find('#secondComponentDiv').removeClass("componentDetails--disable");
+      $('.lable_list li').removeClass("active");
+      return $(this).addClass("active");
     });
     $('#itemThree').on("click", function() {
-      return $('.composition').find('#thirdComponentDiv').removeClass("componentDetails--disable");
+      $('.composition').find('.componentDetails').addClass("componentDetails--disable");
+      $('.composition').find('#thirdComponentDiv').removeClass("componentDetails--disable");
+      $('.lable_list li').removeClass("active");
+      return $(this).addClass("active");
     });
     $('#itemFour').on("click", function() {
-      return $('.composition').find('#fourthComponentDiv').removeClass("componentDetails--disable");
+      $('.composition').find('.componentDetails').addClass("componentDetails--disable");
+      $('.composition').find('#fourthComponentDiv').removeClass("componentDetails--disable");
+      $('.lable_list li').removeClass("active");
+      return $(this).addClass("active");
     });
     $('.crossButton').on('click', function(e) {
       e.preventDefault();

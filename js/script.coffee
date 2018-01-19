@@ -27,14 +27,29 @@ $(document).ready ->
 	
 	$('#firstComponent').addClass('componentDetails--disable')
 
+	$('#itemOne').on "click", () ->
+		$('.composition').find('.componentDetails').addClass("componentDetails--disable")
+		$('.composition').find('#firstComponentDiv').removeClass("componentDetails--disable")
+		$('.lable_list li').removeClass("active")
+		$(this).addClass("active")
+
 	$('#itemTwo').on "click", () ->
+		$('.composition').find('.componentDetails').addClass("componentDetails--disable")
 		$('.composition').find('#secondComponentDiv').removeClass("componentDetails--disable")
+		$('.lable_list li').removeClass("active")
+		$(this).addClass("active");
 
 	$('#itemThree').on "click", () ->
+		$('.composition').find('.componentDetails').addClass("componentDetails--disable")
 		$('.composition').find('#thirdComponentDiv').removeClass("componentDetails--disable")
+		$('.lable_list li').removeClass("active")
+		$(this).addClass("active")
 		
 	$('#itemFour').on "click", () ->
+		$('.composition').find('.componentDetails').addClass("componentDetails--disable")
 		$('.composition').find('#fourthComponentDiv').removeClass("componentDetails--disable")
+		$('.lable_list li').removeClass("active")
+		$(this).addClass("active")
 
 
 	$('.crossButton').on 'click', (e) ->
