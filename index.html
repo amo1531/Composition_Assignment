@@ -24,21 +24,21 @@
     			<div class="composition_image">
     				<img class="sphereImage" src="./Images/sph4.svg">
                     <canvas id="canvas" class="composition_canvasLines"></canvas>
-                        <a class="composition_imageLink" href="#" style="top: 110px; left: 130px;"></a>
-                        <a class="composition_imageLink" href="#" style="top: 127px; left: 180px;"></a>
-                        <a class="composition_imageLink" href="#" style="top: 143px; left: 203px;"></a>
-                        <a class="composition_imageLink" href="#" style="top: 170px; left: 211px;"></a>
+                        <a class="composition_imageLink" pivotPoint="0" href="#" style="top: 110px; left: 130px;"></a>
+                        <a class="composition_imageLink" pivotPoint="1" href="#" style="top: 127px; left: 180px;"></a>
+                        <a class="composition_imageLink" pivotPoint="2" href="#" style="top: 143px; left: 203px;"></a>
+                        <a class="composition_imageLink" pivotPoint="3" href="#" style="top: 170px; left: 211px;"></a>
 
                         <ul class="lable_list">
-                            <li id="itemOne" class="lable_listItem active"><a class="list_link">1</a></li>
-                            <li id="itemTwo" class="lable_listItem"><a class="list_link">2</a></li>
-                            <li id="itemThree" class="lable_listItem"><a class="list_link">3</a></li>
-                            <li id="itemFour" class="lable_listItem"><a class="list_link">4</a></li>
+                            <li id="itemOne" class="lable_listItem" pivotPoint="0"><a class="list_link">1</a></li>
+                            <li id="itemTwo" class="lable_listItem" pivotPoint="1"><a class="list_link">2</a></li>
+                            <li id="itemThree" class="lable_listItem" pivotPoint="2"><a class="list_link">3</a></li>
+                            <li id="itemFour" class="lable_listItem" pivotPoint="3"><a class="list_link">4</a></li>
                         </ul>
     			</div>
                 <div class="composition">
 
-                    <div class="componentDetails" id="firstComponentDiv">
+                    <div class="componentDetails" id="firstComponentDiv" relPoint="0">
                         <div class="circleIndex">1</div>
                         <div class="componentsHeading">
                             <h3>gold</h3>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
 
-                    <div class="componentDetails componentDetails--disable" id="secondComponentDiv">
+                    <div class="componentDetails componentDetails--disable" id="secondComponentDiv" relPoint="1">
                         <div class="circleIndex">2</div>
                         <div class="componentsHeading">
                             <h3>dielectric</h3>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div class="componentDetails componentDetails--disable" id="thirdComponentDiv">
+                    <div class="componentDetails componentDetails--disable" id="thirdComponentDiv" relPoint="2">
                         <div class="circleIndex">3</div>
                         <div class="componentsHeading">
                             <h3>gold</h3>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
 
-                    <div class="componentDetails componentDetails--disable" id="fourthComponentDiv">
+                    <div class="componentDetails componentDetails--disable" id="fourthComponentDiv" relPoint="3">
                         <div class="circleIndex">4</div>
                         <div class="componentsHeading">
                             <h3>dielectric</h3>
