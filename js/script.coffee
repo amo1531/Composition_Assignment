@@ -23,6 +23,7 @@ $(document).ready ->
 	c.lineTo(260,77)
 	c.lineTo(324.5,77)
 	c.stroke()
+	console.log "test"
 
 	
 	$('#firstComponent').addClass('componentDetails--disable')
