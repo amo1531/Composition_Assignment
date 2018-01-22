@@ -69,6 +69,8 @@ input, button {
       width: 13px;
       border-radius: 50%;
       background: url("../Images/dot.svg") no-repeat center center; }
+      .body_wrapper .composition_image .composition_imageLink.active {
+        background: url("../Images/dot-active.svg") no-repeat center center; }
     .body_wrapper .composition_image .lable_list {
       position: absolute;
       top: 31px;

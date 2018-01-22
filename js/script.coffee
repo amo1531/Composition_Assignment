@@ -46,53 +46,10 @@ $(document).ready ->
 			else	
 				$(compElement).addClass("componentDetails--disable")
 
-		# $('.composition_imageLink').each(()-> {
-		# 	point = $(this).attr('pivotPoint')
-
-		# 	})
-		# console.log point
-
-		# $(this).toggleClass 'active'
-		
-		# i = 0
-		# while i < pivotPointList.length
-		# 	pivotPointList[i].attr('pivotpoint') == pivotPoint
-		# 	console.log(pivotPointList[i].addClass('active'))
-		# 	i++
-		# $.each(pivotPointList , function(element){
-		# 	console.log element.attr('pivotPoint')
-		# 	})
-
-
-
-	# $('#itemOne').on "click", () ->
-	# 	$('.composition').find('.componentDetails').addClass("componentDetails--disable")
-	# 	$('.composition').find('#firstComponentDiv').removeClass("componentDetails--disable")
-	# 	$('.lable_list li').removeClass("active")
-	# 	$(this).addClass("active")
-
-	# $('#itemTwo').on "click", () ->
-	# 	$('.composition').find('.componentDetails').addClass("componentDetails--disable")
-	# 	$('.composition').find('#secondComponentDiv').removeClass("componentDetails--disable")
-	# 	$('.lable_list li').removeClass("active")
-	# 	$(this).addClass("active");
-
-	# $('#itemThree').on "click", () ->
-	# 	$('.composition').find('.componentDetails').addClass("componentDetails--disable")
-	# 	$('.composition').find('#thirdComponentDiv').removeClass("componentDetails--disable")
-	# 	$('.lable_list li').removeClass("active")
-	# 	$(this).addClass("active")
-		
-	# $('#itemFour').on "click", () ->
-	# 	$('.composition').find('.componentDetails').addClass("componentDetails--disable")
-	# 	$('.composition').find('#fourthComponentDiv').removeClass("componentDetails--disable")
-	# 	$('.lable_list li').removeClass("active")
-	# 	$(this).addClass("active")
 
 
 	$('.crossButton').on 'click', (e) ->
 		e.preventDefault()
-		# $('#firstComponent').removeClass('componentDetails--disable')
 		$(this).parent().parent().addClass('componentDetails--disable')
 		$(this).parent().find(".componentDetails_wrapper").css({"display":"none"})
 		$(this).css({"display":"none"})

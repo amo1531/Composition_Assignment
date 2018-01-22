@@ -39,6 +39,10 @@
 					width: 13px;
 					border-radius: 50%;
 					background: url("../Images/dot.svg") no-repeat center center;
+
+					&.active{
+						background: url("../Images/dot-active.svg") no-repeat center center;						
+					}
 			}
 			.lable_list{
 				   position: absolute;
