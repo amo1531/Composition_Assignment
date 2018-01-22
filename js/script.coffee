@@ -23,16 +23,38 @@ $(document).ready ->
 	c.lineTo(260,77)
 	c.lineTo(324.5,77)
 	c.stroke()
-	console.log "test"
+# /*========================================== Lable Click ==================================================*/	
 
-	
-	$('#firstComponent').addClass('componentDetails--disable')
 
 	$('.lable_listItem').on "click", () -> 
 		$('.lable_listItem').removeClass 'active'
 		$('.composition_imageLink').removeClass 'active'
 		activePoint = $(this).attr('pivotPoint')
 		pivotPointList = $('.composition_image').find('.composition_imageLink')
+	
+
+		for elements in pivotPointList
+			if activePoint == $(elements).attr("pivotPoint")
+				$(elements).addClass('active')
+				$(this).toggleClass('active')
+
+		compositionSec=$('.componentDetails')
+		for compElement in compositionSec
+			if activePoint == $(compElement).attr('relPoint')
+				$(compElement).removeClass("componentDetails--disable")
+			else	
+				$(compElement).addClass("componentDetails--disable")
+
+
+# /*========================================== Image Dots Click ==================================================*/
+
+
+	$('.composition_imageLink').on "click", () -> 
+		$('.lable_listItem').removeClass 'active'
+		$('.composition_imageLink').removeClass 'active'
+		activePoint = $(this).attr('pivotPoint')
+		pivotPointList = $('.lable_list').find('.lable_listItem')
+	
 
 		for elements in pivotPointList
 			if activePoint == $(elements).attr("pivotPoint")
@@ -48,6 +70,7 @@ $(document).ready ->
 
 
 
+# /*========================================== Cross Click ==================================================*/
 	$('.crossButton').on 'click', (e) ->
 		e.preventDefault()
 		$(this).parent().parent().addClass('componentDetails--disable')
@@ -64,6 +87,9 @@ $(document).ready ->
 			if $(this).parent().parent().attr('relPoint') == $(elements).attr('pivotPoint')
 				$(elements).removeClass('active')		
 
+
+
+# /*========================================== Component Heading Click ==================================================*/
 
 	$(".componentsHeading h3").on "click", () ->
 		$(this).parent().parent().removeClass("componentDetails--disable")
