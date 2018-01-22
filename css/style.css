@@ -35,47 +35,47 @@ input, button {
   margin: 0;
   padding: 0; }
 
-.body_wrapper {
+.Body_wrapper {
   padding: 20px; }
-  .body_wrapper .composition_heading {
+  .Body_wrapper .CompositionHeading {
     font-family: "Source Sans Pro", arial, helvetica, sans-serif;
     font-size: 16px;
     color: #222;
     background: #ecf2f4;
     padding: 7px 10px;
     margin: 7px 0; }
-    .body_wrapper .composition_heading h4 {
+    .Body_wrapper .CompositionHeading h4 {
       font-weight: normal; }
-  .body_wrapper .composition_info p {
+  .Body_wrapper .CompositionInfo p {
     padding: 10px 0 0;
     color: #666666;
     font-size: 13px;
     line-height: 1.5;
     font-weight: 300;
     margin-bottom: 20px; }
-  .body_wrapper .composition_image {
+  .Body_wrapper .CompositionImage {
     height: 300px;
     position: relative;
     min-height: 300px; }
-    .body_wrapper .composition_image .composition_canvasLines {
+    .Body_wrapper .CompositionImage .CompositionImage_canvasLines {
       position: absolute;
       top: 0;
       left: 0;
       height: 300px;
       width: 300px; }
-    .body_wrapper .composition_image .composition_imageLink {
+    .Body_wrapper .CompositionImage .CompositionImage_Link {
       position: absolute;
       height: 13px;
       width: 13px;
       border-radius: 50%;
       background: url("../Images/dot.svg") no-repeat center center; }
-      .body_wrapper .composition_image .composition_imageLink.active {
+      .Body_wrapper .CompositionImage .CompositionImage_Link.active {
         background: url("../Images/dot-active.svg") no-repeat center center; }
-    .body_wrapper .composition_image .lable_list {
+    .Body_wrapper .CompositionImage .Lable_list {
       position: absolute;
       top: 31px;
       left: 298px; }
-    .body_wrapper .composition_image .lable_listItem {
+    .Body_wrapper .CompositionImage .Lable_listItem {
       list-style-type: none;
       height: 18px;
       width: 18px;
@@ -85,17 +85,17 @@ input, button {
       margin-bottom: 18px;
       text-align: center;
       font-size: 13px; }
-    .body_wrapper .composition_image .active {
+    .Body_wrapper .CompositionImage .active {
       background: #666;
       border-color: #666;
       color: #fff; }
 
-.composition .componentDetails {
+.Composition .ComponentDetails {
   position: relative;
   padding: 15px 20px 15px 35px;
   border-top: 2px solid #EE7D11;
   background: #f8f8f8; }
-  .composition .componentDetails .circleIndex {
+  .Composition .ComponentDetails .CircleIndex {
     position: absolute;
     left: 5px;
     height: 18px;
@@ -110,13 +110,13 @@ input, button {
     margin-bottom: 18px;
     text-align: center;
     font-size: 11px; }
-  .composition .componentDetails .componentsHeading h3 {
+  .Composition .ComponentDetails .ComponentsHeading h3 {
     padding: 0 25px 10px 0;
     margin-bottom: 10px;
     line-height: 1.3;
     font-weight: 100;
     font-family: Lora, Palatino, Times, Times New Roman, serif; }
-  .composition .componentDetails .componentsHeading .crossButton {
+  .Composition .ComponentDetails .ComponentsHeading .CrossButton {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -126,22 +126,22 @@ input, button {
     cursor: pointer;
     background: url("../Images/cross.png") no-repeat center center;
     background-size: contain; }
-  .composition .componentDetails .componentDetails_wrapper {
+  .Composition .ComponentDetails .ComponentDetails_wrapper {
     border-top: 1px solid #d8d8d8; }
-    .composition .componentDetails .componentDetails_wrapper .components_property {
+    .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property {
       margin-top: 20px; }
-      .composition .componentDetails .componentDetails_wrapper .components_property .property_name {
+      .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property .Property_name {
         display: block;
         margin-bottom: 4px;
         font-size: 12px; }
-      .composition .componentDetails .componentDetails_wrapper .components_property .property_value {
+      .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property .Property_value {
         font-size: 12px; }
-  .composition .componentDetails.componentDetails--disable {
+  .Composition .ComponentDetails.ComponentDetails--disable {
     background: none;
     border: none;
     border-bottom: 1px solid #d8d8d8;
     height: auto; }
-    .composition .componentDetails.componentDetails--disable .componentsHeading h3 {
+    .Composition .ComponentDetails.ComponentDetails--disable .ComponentsHeading h3 {
       font-family: "Source Sans Pro", arial, helvetica, sans-serif;
       font-size: 13px;
       color: #069;
@@ -149,17 +149,17 @@ input, button {
       padding-bottom: 0;
       border: none;
       cursor: pointer; }
-    .composition .componentDetails.componentDetails--disable .componentsHeading .crossButton {
+    .Composition .ComponentDetails.ComponentDetails--disable .ComponentsHeading .CrossButton {
       display: none; }
-    .composition .componentDetails.componentDetails--disable .circleIndex {
+    .Composition .ComponentDetails.ComponentDetails--disable .CircleIndex {
       cursor: pointer;
       background: white;
       border: 1px solid #999999;
       color: #666666; }
     @media screen and (min-width: 320px) {
-      .composition .componentDetails.componentDetails--disable .RemoveBottomBorder {
+      .Composition .ComponentDetails.ComponentDetails--disable .RemoveBottomBorder {
         border-bottom: none; } }
-    .composition .componentDetails.componentDetails--disable .componentDetails_wrapper {
+    .Composition .ComponentDetails.ComponentDetails--disable .ComponentDetails_wrapper {
       display: none; }
 
 /*# sourceMappingURL=style.css.map */

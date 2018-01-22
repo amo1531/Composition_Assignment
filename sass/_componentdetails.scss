@@ -1,10 +1,10 @@
-.composition {
-	.componentDetails {
+.Composition {
+	.ComponentDetails {
 		position: relative;
 		padding:15px 20px 15px 35px;
 		border-top: 2px solid #EE7D11;
 		background: #f8f8f8;
-		.circleIndex {
+		.CircleIndex {
 			   position: absolute;
 			   left:5px;
 			   height: 18px;
@@ -21,7 +21,7 @@
 			   font-size: 11px;
 		}
 
-		.componentsHeading {
+		.ComponentsHeading {
 			h3 {
 				padding: 0 25px 10px 0;
 			    margin-bottom: 10px;
@@ -29,7 +29,7 @@
 			    font-weight: 100;
 			    font-family: Lora, Palatino, Times, Times New Roman, serif;
 			}
-			.crossButton {
+			.CrossButton {
 				position: absolute;
 				top:20px;
 				right: 10px;
@@ -41,26 +41,26 @@
 				background-size: contain;
 			}
 		}
-		.componentDetails_wrapper {
+		.ComponentDetails_wrapper {
 			border-top: 1px solid #d8d8d8;
-			.components_property {
+			.Components_property {
 				margin-top: 20px;
-				.property_name {
+				.Property_name {
 					display: block;
 					margin-bottom: 4px;
 					font-size: 12px;
 				}
-				.property_value {
+				.Property_value {
 					font-size: 12px;
 				}
 			}
 		}
-		&.componentDetails--disable{
+		&.ComponentDetails--disable{
 			background: none;
 		    border: none;
 		    border-bottom: 1px solid #d8d8d8;
 		    height: auto;
-		    .componentsHeading {
+		    .ComponentsHeading {
 			    h3 {
 				    font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 				    font-size: 13px;
@@ -70,11 +70,11 @@
 				    border: none;
 				    cursor: pointer;
 				    }
-			    .crossButton{
+			    .CrossButton{
 			    	display: none;
 			    }
 			}
-			.circleIndex{
+			.CircleIndex{
 				cursor:pointer;
 				background: white;
 			    border: 1px solid #999999;
@@ -88,7 +88,7 @@
 		    	}
 
 		    }
-		    .componentDetails_wrapper{
+		    .ComponentDetails_wrapper{
 		    	display: none;
 		    	
 		 	}

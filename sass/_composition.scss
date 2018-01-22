@@ -1,6 +1,6 @@
-.body_wrapper {
+.Body_wrapper {
 	padding:20px;
-		.composition_heading {
+		.CompositionHeading {
 			font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 		    font-size: 16px;
 		    color: #222;
@@ -11,7 +11,7 @@
 		    	font-weight: normal;
 		    }
 		}
-		.composition_info {
+		.CompositionInfo {
 			p{
 				padding: 10px 0 0;
     			color: #666666;
@@ -22,18 +22,18 @@
 			}
 
 		}
-		.composition_image {
+		.CompositionImage {
 			height: 300px;
 			position: relative;
 			min-height: 300px;
-			.composition_canvasLines {
+			.CompositionImage_canvasLines {
 				position: absolute;
 				top: 0;
 				left: 0;
 				height: 300px;
 				width: 300px;
 			}
-			.composition_imageLink{
+			.CompositionImage_Link{
 					position: absolute;
 					height: 13px;
 					width: 13px;
@@ -44,12 +44,12 @@
 						background: url("../Images/dot-active.svg") no-repeat center center;						
 					}
 			}
-			.lable_list{
+			.Lable_list{
 				   position: absolute;
 				   top: 31px;
     			   left: 298px;
 				}
-			.lable_listItem{
+			.Lable_listItem{
 			   list-style-type: none;  
 			   height: 18px;
 			   width: 18px;
