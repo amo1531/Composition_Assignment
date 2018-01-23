@@ -1,4 +1,4 @@
-.Composition {
+.Components {
 	.ComponentDetails {
 		position: relative;
 		padding:15px 20px 15px 35px;
@@ -41,16 +41,16 @@
 				background-size: contain;
 			}
 		}
-		.ComponentDetails_wrapper {
+		.ComponentProperty_Wrapper {
 			border-top: 1px solid #d8d8d8;
-			.Components_property {
+			.ComponentProperty {
 				margin-top: 20px;
-				.Property_name {
+				.PropertyName {
 					display: block;
 					margin-bottom: 4px;
 					font-size: 12px;
 				}
-				.Property_value {
+				.PropertyValue {
 					font-size: 12px;
 				}
 			}
@@ -88,7 +88,7 @@
 		    	}
 
 		    }
-		    .ComponentDetails_wrapper{
+		    .ComponentProperty_Wrapper{
 		    	display: none;
 		    	
 		 	}

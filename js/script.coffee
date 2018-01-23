@@ -61,7 +61,7 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.Component_details')
+		compositionSec=$('.ComponentDetails')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relPoint')
 				$(compElement).removeClass("ComponentDetails--disable")
@@ -74,7 +74,7 @@ $(document).ready ->
 	$('.CrossButton').on 'click', (e) ->
 		e.preventDefault()
 		$(this).parent().parent().addClass('ComponentDetails--disable')
-		$(this).parent().find(".ComponentDetails_wrapper").css({"display":"none"})
+		$(this).parent().find(".ComponentProperty_Wrapper").css({"display":"none"})
 		$(this).css({"display":"none"})
 
 		pivotPointList = $('.CompositionImage').find('.CompositionImage_Link')

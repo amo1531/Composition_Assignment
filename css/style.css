@@ -90,12 +90,12 @@ input, button {
       border-color: #666;
       color: #fff; }
 
-.Composition .ComponentDetails {
+.Components .ComponentDetails {
   position: relative;
   padding: 15px 20px 15px 35px;
   border-top: 2px solid #EE7D11;
   background: #f8f8f8; }
-  .Composition .ComponentDetails .CircleIndex {
+  .Components .ComponentDetails .CircleIndex {
     position: absolute;
     left: 5px;
     height: 18px;
@@ -110,13 +110,13 @@ input, button {
     margin-bottom: 18px;
     text-align: center;
     font-size: 11px; }
-  .Composition .ComponentDetails .ComponentsHeading h3 {
+  .Components .ComponentDetails .ComponentsHeading h3 {
     padding: 0 25px 10px 0;
     margin-bottom: 10px;
     line-height: 1.3;
     font-weight: 100;
     font-family: Lora, Palatino, Times, Times New Roman, serif; }
-  .Composition .ComponentDetails .ComponentsHeading .CrossButton {
+  .Components .ComponentDetails .ComponentsHeading .CrossButton {
     position: absolute;
     top: 20px;
     right: 10px;
@@ -126,22 +126,22 @@ input, button {
     cursor: pointer;
     background: url("../Images/cross.png") no-repeat center center;
     background-size: contain; }
-  .Composition .ComponentDetails .ComponentDetails_wrapper {
+  .Components .ComponentDetails .ComponentProperty_Wrapper {
     border-top: 1px solid #d8d8d8; }
-    .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property {
+    .Components .ComponentDetails .ComponentProperty_Wrapper .ComponentProperty {
       margin-top: 20px; }
-      .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property .Property_name {
+      .Components .ComponentDetails .ComponentProperty_Wrapper .ComponentProperty .PropertyName {
         display: block;
         margin-bottom: 4px;
         font-size: 12px; }
-      .Composition .ComponentDetails .ComponentDetails_wrapper .Components_property .Property_value {
+      .Components .ComponentDetails .ComponentProperty_Wrapper .ComponentProperty .PropertyValue {
         font-size: 12px; }
-  .Composition .ComponentDetails.ComponentDetails--disable {
+  .Components .ComponentDetails.ComponentDetails--disable {
     background: none;
     border: none;
     border-bottom: 1px solid #d8d8d8;
     height: auto; }
-    .Composition .ComponentDetails.ComponentDetails--disable .ComponentsHeading h3 {
+    .Components .ComponentDetails.ComponentDetails--disable .ComponentsHeading h3 {
       font-family: "Source Sans Pro", arial, helvetica, sans-serif;
       font-size: 13px;
       color: #069;
@@ -149,17 +149,17 @@ input, button {
       padding-bottom: 0;
       border: none;
       cursor: pointer; }
-    .Composition .ComponentDetails.ComponentDetails--disable .ComponentsHeading .CrossButton {
+    .Components .ComponentDetails.ComponentDetails--disable .ComponentsHeading .CrossButton {
       display: none; }
-    .Composition .ComponentDetails.ComponentDetails--disable .CircleIndex {
+    .Components .ComponentDetails.ComponentDetails--disable .CircleIndex {
       cursor: pointer;
       background: white;
       border: 1px solid #999999;
       color: #666666; }
     @media screen and (min-width: 320px) {
-      .Composition .ComponentDetails.ComponentDetails--disable .RemoveBottomBorder {
+      .Components .ComponentDetails.ComponentDetails--disable .RemoveBottomBorder {
         border-bottom: none; } }
-    .Composition .ComponentDetails.ComponentDetails--disable .ComponentDetails_wrapper {
+    .Components .ComponentDetails.ComponentDetails--disable .ComponentProperty_Wrapper {
       display: none; }
 
 /*# sourceMappingURL=style.css.map */
