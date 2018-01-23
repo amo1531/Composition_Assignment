@@ -23,14 +23,14 @@ $(document).ready ->
 	c.lineTo(260,77)
 	c.lineTo(324.5,77)
 	c.stroke()
-# /*========================================== Lable Click ==================================================*/	
+# /*========================================== Label Click ==================================================*/	
 
 
-	$('.Lable_listItem').on "click", () -> 
-		$('.Lable_listItem').removeClass 'active'
-		$('.CompositionImage_Link').removeClass 'active'
+	$('.Label_listItem').on "click", () -> 
+		$('.Label_listItem').removeClass 'active'
+		$('.Composition_image_link').removeClass 'active'
 		activePoint = $(this).attr('pivotPoint')
-		pivotPointList = $('.CompositionImage').find('.CompositionImage_Link')
+		pivotPointList = $('.Composition_image').find('.Composition_image_link')
 	
 
 		for elements in pivotPointList
@@ -38,22 +38,22 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.ComponentDetails')
+		compositionSec=$('.ComponentInfo_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relPoint')
-				$(compElement).removeClass("ComponentDetails--disable")
+				$(compElement).removeClass("ComponentInfo_details--disable")
 			else	
-				$(compElement).addClass("ComponentDetails--disable")
+				$(compElement).addClass("ComponentInfo_details--disable")
 
 
 # /*========================================== Image Dots Click ==================================================*/
 
 
-	$('.CompositionImage_Link').on "click", () -> 
-		$('.Lable_listItem').removeClass 'active'
-		$('.CompositionImage_Link').removeClass 'active'
+	$('.Composition_image_link').on "click", () -> 
+		$('.Label_listItem').removeClass 'active'
+		$('.Composition_image_link').removeClass 'active'
 		activePoint = $(this).attr('pivotPoint')
-		pivotPointList = $('.Lable_list').find('.Lable_listItem')
+		pivotPointList = $('.Label').find('.Label_listItem')
 	
 
 		for elements in pivotPointList
@@ -61,28 +61,28 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.ComponentDetails')
+		compositionSec=$('.ComponentInfo_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relPoint')
-				$(compElement).removeClass("ComponentDetails--disable")
+				$(compElement).removeClass("ComponentInfo_details--disable")
 			else	
-				$(compElement).addClass("ComponentDetails--disable")
+				$(compElement).addClass("ComponentInfo_details--disable")
 
 
 
 # /*========================================== Cross Click ==================================================*/
 	$('.CrossButton').on 'click', (e) ->
 		e.preventDefault()
-		$(this).parent().parent().addClass('ComponentDetails--disable')
-		$(this).parent().find(".ComponentProperty_Wrapper").css({"display":"none"})
+		$(this).parent().parent().addClass('ComponentInfo_details--disable')
+		$(this).parent().find(".Components_wrapper").css({"display":"none"})
 		$(this).css({"display":"none"})
 
-		pivotPointList = $('.CompositionImage').find('.CompositionImage_Link')
+		pivotPointList = $('.Composition_image').find('.Composition_image_link')
 		for elements in pivotPointList
 			if $(this).parent().parent().attr('relPoint') == $(elements).attr('pivotPoint')
 				$(elements).removeClass('active')
 
-		labelList = $('.CompositionImage').find('.Lable_listItem')
+		labelList = $('.Composition_image').find('.Label_listItem')
 		for elements in labelList
 			if $(this).parent().parent().attr('relPoint') == $(elements).attr('pivotPoint')
 				$(elements).removeClass('active')		
@@ -91,20 +91,20 @@ $(document).ready ->
 
 # /*========================================== Component Heading Click ==================================================*/
 
-	$(".ComponentsHeading h3").on "click", () ->
-		$(this).parent().parent().removeClass("ComponentDetails--disable")
-		$(this).parent().parent().siblings('div').addClass("ComponentDetails--disable")
+	$(".Components_heading h3").on "click", () ->
+		$(this).parent().parent().removeClass("ComponentInfo_details--disable")
+		$(this).parent().parent().siblings('div').addClass("ComponentInfo_details--disable")
 		$(this).siblings('.CrossButton').css({"display":"block"})
 		$(this).parent().parent().siblings('div').find('a').css({"display":"none"})
 
-		pivotPointList = $('.CompositionImage').find('.CompositionImage_Link')
+		pivotPointList = $('.Composition_image').find('.Composition_image_link')
 		for elements in pivotPointList
 			if $(this).parent().parent().attr('relPoint') == $(elements).attr('pivotPoint')
 				$(elements).addClass('active')
 			else	
 				$(elements).removeClass('active')
 
-		labelList = $('.CompositionImage').find('.Lable_listItem')
+		labelList = $('.Composition_image').find('.Label_listItem')
 		for elements in labelList
 			if $(this).parent().parent().attr('relPoint') == $(elements).attr('pivotPoint')
 				$(elements).addClass('active')	

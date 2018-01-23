@@ -1,18 +1,22 @@
 .Body_wrapper {
 	padding:20px;
-		.CompositionHeading {
+
+	.Composition {
+		.Composition_heading {
 			font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 		    font-size: 16px;
 		    color: #222;
 		    background: #ecf2f4;
 		    padding: 7px 10px;
 		    margin: 7px 0;
-		    h4{
+
+		    h4 { 
 		    	font-weight: normal;
 		    }
 		}
-		.CompositionInfo {
-			p{
+	
+		.Composition_info {
+			p {
 				padding: 10px 0 0;
     			color: #666666;
     			font-size: 13px;
@@ -22,37 +26,35 @@
 			}
 
 		}
-		.CompositionImage {
+	
+		.Composition_image {
 			height: 300px;
 			position: relative;
 			min-height: 300px;
-			.CompositionImage_canvasLines {
-				position: absolute;
-				top: 0;
-				left: 0;
-				height: 300px;
-				width: 300px;
+	
+			.Composition_image_canvasLines {
+				position: absolute; top: 0; left: 0;
+				height: 300px; width: 300px;
 			}
-			.CompositionImage_Link{
+
+			.Composition_image_link {
 					position: absolute;
-					height: 13px;
-					width: 13px;
+					height: 13px; width: 13px;
 					border-radius: 50%;
 					background: url("../Images/dot.svg") no-repeat center center;
 
-					&.active{
+					&.active {
 						background: url("../Images/dot-active.svg") no-repeat center center;						
 					}
 			}
-			.Lable_list{
-				   position: absolute;
-				   top: 31px;
-    			   left: 298px;
+
+			.Label {
+				   position: absolute; top: 31px; left: 298px;
 				}
-			.Lable_listItem{
+				
+			.Label_listItem {
 			   list-style-type: none;  
-			   height: 18px;
-			   width: 18px;
+			   height: 18px; width: 18px;
 			   border-radius: 50%;
 			   border: 1px solid #999999 ;
 			   color: #999999 ;
@@ -61,7 +63,8 @@
 			   font-size: 13px;
 			  
 			}
-			.active{
+
+			.active {
 				background: #666;
 				border-color: #666;
 				color: #fff;
@@ -71,4 +74,6 @@
 			//    color: #fff;
 			// }
 		}
+	}
+		
 }

@@ -1,14 +1,14 @@
-.Components {
-	.ComponentDetails {
+.ComponentInfo {
+
+	.ComponentInfo_details {
 		position: relative;
 		padding:15px 20px 15px 35px;
 		border-top: 2px solid #EE7D11;
 		background: #f8f8f8;
+
 		.CircleIndex {
-			   position: absolute;
-			   left:5px;
-			   height: 18px;
-			   width: 18px;
+			   position: absolute; left:5px;
+			   height: 18px; width: 18px;
 			   border-radius: 50%;
 			   border: 1px solid #666666;
 			   font-size: 11px;
@@ -21,7 +21,7 @@
 			   font-size: 11px;
 		}
 
-		.ComponentsHeading {
+		.Components_heading {
 			h3 {
 				padding: 0 25px 10px 0;
 			    margin-bottom: 10px;
@@ -29,52 +29,55 @@
 			    font-weight: 100;
 			    font-family: Lora, Palatino, Times, Times New Roman, serif;
 			}
+
 			.CrossButton {
-				position: absolute;
-				top:20px;
-				right: 10px;
+				position: absolute; top:20px; right: 10px;
 				text-decoration: none;
-				height: 18px;
-				width: 18px;
+				height: 18px; width: 18px;
 				cursor: pointer;
 				background: url("../Images/cross.png") no-repeat center center;
 				background-size: contain;
 			}
 		}
-		.ComponentProperty_Wrapper {
+		.Components_wrapper {
 			border-top: 1px solid #d8d8d8;
-			.ComponentProperty {
+
+			.Components_property {
 				margin-top: 20px;
-				.PropertyName {
+
+				.Property_name {
 					display: block;
 					margin-bottom: 4px;
 					font-size: 12px;
 				}
-				.PropertyValue {
+				.Property_value {
 					font-size: 12px;
 				}
 			}
 		}
-		&.ComponentDetails--disable{
+
+		&.ComponentInfo_details--disable {
 			background: none;
 		    border: none;
 		    border-bottom: 1px solid #d8d8d8;
 		    height: auto;
-		    .ComponentsHeading {
+
+		    .Components_heading {
 			    h3 {
-				    font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-				    font-size: 13px;
+				    font-family: "Source Sans Pro", arial, helvetica, sans-serif; 
+				    font-size: 13px; 
 				    color: #069;
 				    margin-bottom: 0;
 				    padding-bottom: 0;
 				    border: none;
 				    cursor: pointer;
 				    }
-			    .CrossButton{
+				    
+			    .CrossButton {
 			    	display: none;
 			    }
 			}
-			.CircleIndex{
+			.CircleIndex {
 				cursor:pointer;
 				background: white;
 			    border: 1px solid #999999;
@@ -83,12 +86,12 @@
 			}
 		    	@include media-query(mobile) {
 
-		    	.RemoveBottomBorder{
+		    	.RemoveBottomBorder {
 		    		border-bottom: none;
 		    	}
 
 		    }
-		    .ComponentProperty_Wrapper{
+		    .Components_wrapper {
 		    	display: none;
 		    	
 		 	}
