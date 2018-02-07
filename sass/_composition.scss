@@ -5,8 +5,8 @@
 		.Composition_heading {
 			font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 		    font-size: 16px;
-		    color: #222;
-		    background: #ecf2f4;
+		    color: $black;
+		    background: $light-blue;
 		    padding: 7px 10px;
 		    margin: 7px 0;
 
@@ -64,7 +64,8 @@
 						height: 18px; width: 18px;
 						border-radius: 50%;
 						border: 1px solid $dark-Grey ;
-						color: $dark-Grey ;
+						color: $grey ;
+						background: $white;
 						text-align: center;
 						font-size: 13px;
 						display: block;
@@ -76,28 +77,36 @@
 				}
 				@include media-query(widescreen) {
 					margin-bottom: 23px;
+				
 					.listItem_mobile {
 						display: none;
 					}
 					.listItem_desktop {
-						font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-						font-size: 13px;
-						color: $blue;
-						cursor: pointer;
 						display: block;
-					}
-					.active {
-						color: $black;
-						font-weight: bolder;
-					}
+					}	
 				}
+				.listItem_desktop {
+					font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+					font-size: 13px;
+					color: $blue;
+					cursor: pointer;
+				}
+				
 			}
 			.active {
-				background: $grey;
-				border-color: $grey;
-				color: $white;
 				@include media-query(widescreen){
 					background: $white;
+
+				}
+				.listItem_desktop{
+					color: $black;
+					font-weight: bolder;
+				}
+
+				.listItem_mobile{
+					background: $grey;
+					color: $white;
+					border-color: $grey;
 				}
 			}
 		}

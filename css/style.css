@@ -40,7 +40,7 @@ input, button {
   .Body_wrapper .Composition .Composition_heading {
     font-family: "Source Sans Pro", arial, helvetica, sans-serif;
     font-size: 16px;
-    color: #222;
+    color: #000;
     background: #ecf2f4;
     padding: 7px 10px;
     margin: 7px 0; }
@@ -87,7 +87,8 @@ input, button {
           width: 18px;
           border-radius: 50%;
           border: 1px solid #999999;
-          color: #999999;
+          color: #666;
+          background: #fff;
           text-align: center;
           font-size: 13px;
           display: block; }
@@ -99,21 +100,22 @@ input, button {
           .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_mobile {
             display: none; }
           .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_desktop {
-            font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-            font-size: 13px;
-            color: #069;
-            cursor: pointer;
-            display: block; }
-          .Body_wrapper .Composition .Composition_image .Label_listItem .active {
-            color: #000;
-            font-weight: bolder; } }
-    .Body_wrapper .Composition .Composition_image .active {
+            display: block; } }
+      .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_desktop {
+        font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+        font-size: 13px;
+        color: #069;
+        cursor: pointer; }
+    @media screen and (min-width: 1025px) {
+      .Body_wrapper .Composition .Composition_image .active {
+        background: #fff; } }
+    .Body_wrapper .Composition .Composition_image .active .listItem_desktop {
+      color: #000;
+      font-weight: bolder; }
+    .Body_wrapper .Composition .Composition_image .active .listItem_mobile {
       background: #666;
-      border-color: #666;
-      color: #fff; }
-      @media screen and (min-width: 1025px) {
-        .Body_wrapper .Composition .Composition_image .active {
-          background: #fff; } }
+      color: #fff;
+      border-color: #666; }
 
 .ComponentInfo .ComponentInfo_details {
   position: relative;
