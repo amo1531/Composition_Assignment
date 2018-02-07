@@ -60,9 +60,7 @@ input, button {
     .Body_wrapper .Composition .Composition_image .Composition_image_canvasLines {
       position: absolute;
       top: 0;
-      left: 0;
-      height: 300px;
-      width: 300px; }
+      left: 0; }
     .Body_wrapper .Composition .Composition_image .Composition_image_link {
       position: absolute;
       height: 13px;
@@ -73,18 +71,42 @@ input, button {
         background: url("../Images/dot-active.svg") no-repeat center center; }
     .Body_wrapper .Composition .Composition_image .Label {
       position: absolute;
-      top: 31px;
-      left: 298px; }
+      top: 16px;
+      left: 300px; }
+      @media screen and (min-width: 1025px) {
+        .Body_wrapper .Composition .Composition_image .Label {
+          top: 4px;
+          left: 275px; } }
     .Body_wrapper .Composition .Composition_image .Label_listItem {
       list-style-type: none;
-      height: 18px;
-      width: 18px;
-      border-radius: 50%;
-      border: 1px solid #999999;
-      color: #999999;
-      margin-bottom: 18px;
-      text-align: center;
-      font-size: 13px; }
+      margin-bottom: 20px;
+      border-radius: 50%; }
+      @media screen and (min-width: 320px) {
+        .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_mobile {
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          border: 1px solid #999999;
+          color: #999999;
+          text-align: center;
+          font-size: 13px;
+          display: block; }
+        .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_desktop {
+          display: none; } }
+      @media screen and (min-width: 1025px) {
+        .Body_wrapper .Composition .Composition_image .Label_listItem {
+          margin-bottom: 23px; }
+          .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_mobile {
+            display: none; }
+          .Body_wrapper .Composition .Composition_image .Label_listItem .listItem_desktop {
+            font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+            font-size: 13px;
+            color: #069;
+            cursor: pointer;
+            display: block; }
+          .Body_wrapper .Composition .Composition_image .Label_listItem .active {
+            color: #000;
+            font-weight: bolder; } }
     .Body_wrapper .Composition .Composition_image .active {
       background: #666;
       border-color: #666;

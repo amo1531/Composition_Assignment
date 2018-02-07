@@ -34,7 +34,6 @@
 	
 			.Composition_image_canvasLines {
 				position: absolute; top: 0; left: 0;
-				height: 300px; width: 300px;
 			}
 
 			.Composition_image_link {
@@ -49,30 +48,55 @@
 			}
 
 			.Label {
-				   position: absolute; top: 31px; left: 298px;
+					position: absolute; top: 16px; left: 300px;
+					@include media-query(widescreen) {
+						top:4px;
+						left:275px;
+					}
 				}
 				
 			.Label_listItem {
-			   list-style-type: none;  
-			   height: 18px; width: 18px;
-			   border-radius: 50%;
-			   border: 1px solid #999999 ;
-			   color: #999999 ;
-			   margin-bottom: 18px;
-			   text-align: center;
-			   font-size: 13px;
-			  
+				list-style-type: none;  
+				margin-bottom: 20px;
+				border-radius: 50%;
+				@include media-query(mobile) {
+					.listItem_mobile {
+						height: 18px; width: 18px;
+						border-radius: 50%;
+						border: 1px solid #999999 ;
+						color: #999999 ;
+						text-align: center;
+						font-size: 13px;
+						display: block;
+					}
+					.listItem_desktop {
+						display: none;
+					}
+					
+				}
+				@include media-query(widescreen) {
+					margin-bottom: 23px;
+					.listItem_mobile {
+						display: none;
+					}
+					.listItem_desktop {
+						font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+						font-size: 13px;
+						color: #069;
+						cursor: pointer;
+						display: block;
+					}
+					.active {
+						color: #000;
+						font-weight: bolder;
+					}
+				}
 			}
-
 			.active {
 				background: #666;
 				border-color: #666;
 				color: #fff;
 			}
-			// .lable_listItem:hover{
-			//    background-color: #808080 ;
-			//    color: #fff;
-			// }
 		}
 	}
 		
