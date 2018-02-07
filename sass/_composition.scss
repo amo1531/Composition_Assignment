@@ -1,115 +1,123 @@
 .Body_wrapper {
 	padding:20px;
+	@include media-query(widescreen) {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	.Composition_heading {
+		font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+		font-size: 16px;
+		color: $black;
+		background: $light-blue;
+		padding: 7px 10px;
+		margin: 7px 0;
 
-	.Composition {
-		.Composition_heading {
-			font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-		    font-size: 16px;
-		    color: $black;
-		    background: $light-blue;
-		    padding: 7px 10px;
-		    margin: 7px 0;
-
-		    h4 { 
-		    	font-weight: normal;
-		    }
+		h4 { 
+			font-weight: normal;
 		}
-	
-		.Composition_info {
-			p {
-				padding: 10px 0 0;
-    			color: $grey;
-    			font-size: 13px;
-    			line-height: 1.5;
-    			font-weight: 300;
-    			margin-bottom: 20px;
+	}
+	.Composition_body{
+		@include clearfix;
+		.Composition {
+			@include media-query(widescreen) {
+				width: 480px;
+				float: left;
 			}
-
-		}
-	
-		.Composition_image {
-			height: 300px;
-			position: relative;
-			min-height: 300px;
-	
-			.Composition_image_canvasLines {
-				position: absolute; top: 0; left: 0;
-			}
-
-			.Composition_image_link {
-					position: absolute;
-					height: 13px; width: 13px;
-					border-radius: 50%;
-					background: url("../Images/dot.svg") no-repeat center center;
-
-					&.active {
-						background: url("../Images/dot-active.svg") no-repeat center center;						
-					}
-			}
-
-			.Label {
-					position: absolute; top: 16px; left: 300px;
-					@include media-query(widescreen) {
-						top:4px;
-						left:275px;
-					}
+			.Composition_info {
+				p {
+					padding: 10px 0 0;
+					color: $grey;
+					font-size: 13px;
+					line-height: 1.5;
+					font-weight: 300;
+					margin-bottom: 20px;
 				}
-				
-			.Label_listItem {
-				list-style-type: none;  
-				margin-bottom: 20px;
-				border-radius: 50%;
-				@include media-query(mobile) {
-					.listItem_mobile {
-						height: 18px; width: 18px;
+
+			}
+		
+			.Composition_image {
+				height: 300px;
+				position: relative;
+				min-height: 300px;
+		
+				.Composition_image_canvasLines {
+					position: absolute; top: 0; left: 0;
+				}
+
+				.Composition_image_link {
+						position: absolute;
+						height: 13px; width: 13px;
 						border-radius: 50%;
-						border: 1px solid $dark-Grey ;
-						color: $grey ;
-						background: $white;
-						text-align: center;
-						font-size: 13px;
-						display: block;
+						background: url("../Images/dot.svg") no-repeat center center;
+
+						&.active {
+							background: url("../Images/dot-active.svg") no-repeat center center;						
+						}
+				}
+
+				.Label {
+						position: absolute; top: 16px; left: 300px;
+						@include media-query(widescreen) {
+							top:4px;
+							left:275px;
+						}
+					}
+					
+				.Label_listItem {
+					list-style-type: none;  
+					margin-bottom: 20px;
+					border-radius: 50%;
+					@include media-query(mobile) {
+						.listItem_mobile {
+							height: 18px; width: 18px;
+							border-radius: 50%;
+							border: 1px solid $dark-Grey ;
+							color: $grey ;
+							background: $white;
+							text-align: center;
+							font-size: 13px;
+							display: block;
+						}
+						.listItem_desktop {
+							display: none;
+						}
+						
+					}
+					@include media-query(widescreen) {
+						margin-bottom: 23px;
+					
+						.listItem_mobile {
+							display: none;
+						}
+						.listItem_desktop {
+							display: block;
+						}	
 					}
 					.listItem_desktop {
-						display: none;
+						font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+						font-size: 13px;
+						color: $blue;
+						cursor: pointer;
 					}
 					
 				}
-				@include media-query(widescreen) {
-					margin-bottom: 23px;
-				
-					.listItem_mobile {
-						display: none;
+				.active {
+					@include media-query(widescreen){
+						background: $white;
+
 					}
-					.listItem_desktop {
-						display: block;
-					}	
-				}
-				.listItem_desktop {
-					font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-					font-size: 13px;
-					color: $blue;
-					cursor: pointer;
-				}
-				
-			}
-			.active {
-				@include media-query(widescreen){
-					background: $white;
+					.listItem_desktop{
+						color: $black;
+						font-weight: bolder;
+					}
 
-				}
-				.listItem_desktop{
-					color: $black;
-					font-weight: bolder;
-				}
-
-				.listItem_mobile{
-					background: $grey;
-					color: $white;
-					border-color: $grey;
+					.listItem_mobile{
+						background: $grey;
+						color: $white;
+						border-color: $grey;
+					}
 				}
 			}
 		}
-	}
-		
+	}	
 }
