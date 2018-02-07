@@ -18,7 +18,7 @@
 		.Composition_info {
 			p {
 				padding: 10px 0 0;
-    			color: #666666;
+    			color: $grey;
     			font-size: 13px;
     			line-height: 1.5;
     			font-weight: 300;
@@ -63,8 +63,8 @@
 					.listItem_mobile {
 						height: 18px; width: 18px;
 						border-radius: 50%;
-						border: 1px solid #999999 ;
-						color: #999999 ;
+						border: 1px solid $dark-Grey ;
+						color: $dark-Grey ;
 						text-align: center;
 						font-size: 13px;
 						display: block;
@@ -82,20 +82,23 @@
 					.listItem_desktop {
 						font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 						font-size: 13px;
-						color: #069;
+						color: $blue;
 						cursor: pointer;
 						display: block;
 					}
 					.active {
-						color: #000;
+						color: $black;
 						font-weight: bolder;
 					}
 				}
 			}
 			.active {
-				background: #666;
-				border-color: #666;
-				color: #fff;
+				background: $grey;
+				border-color: $grey;
+				color: $white;
+				@include media-query(widescreen){
+					background: $white;
+				}
 			}
 		}
 	}
