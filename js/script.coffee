@@ -8,19 +8,19 @@ $(document).ready ->
 			canvas.height = 300
 			canvas.width = 300
 			c.beginPath()
-			c.moveTo(135,117)
+			c.moveTo(129,109)
 			c.lineTo(265,25)
 			c.lineTo(340,25)
 
-			c.moveTo(186,135)
+			c.moveTo(182,126)
 			c.lineTo(265,65)
 			c.lineTo(340,65)
 
-			c.moveTo(210,150)
+			c.moveTo(205,146)
 			c.lineTo(265,105)
 			c.lineTo(340,105)
 
-			c.moveTo(220,175)
+			c.moveTo(210,174)
 			c.lineTo(265,145)
 			c.lineTo(340,145)
 			c.stroke()
@@ -30,19 +30,19 @@ $(document).ready ->
 			canvas.width = 550
 			c.beginPath()
 
-			c.moveTo(135,117)
+			c.moveTo(129,109)
 			c.lineTo(265,25)
 			c.lineTo(500,25)
 
-			c.moveTo(186,135)
+			c.moveTo(182,126)
 			c.lineTo(265,65)
 			c.lineTo(500,65)
 
-			c.moveTo(210,150)
+			c.moveTo(205,146)
 			c.lineTo(265,105)
 			c.lineTo(500,105)
 
-			c.moveTo(220,175)
+			c.moveTo(210,174)
 			c.lineTo(265,145)
 			c.lineTo(500,145)
 			c.stroke()
