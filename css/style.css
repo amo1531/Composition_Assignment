@@ -37,7 +37,7 @@ input, button {
 
 .Body_wrapper {
   padding: 20px; }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 901px) {
     .Body_wrapper {
       max-width: 800px;
       margin: 0 auto; } }
@@ -55,7 +55,7 @@ input, button {
     display: table; }
   .Body_wrapper .Composition_body:after {
     clear: both; }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 901px) {
     .Body_wrapper .Composition_body .Composition {
       width: 480px;
       float: left; } }
@@ -86,7 +86,7 @@ input, button {
       position: absolute;
       top: 16px;
       left: 300px; }
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 901px) {
         .Body_wrapper .Composition_body .Composition .Composition_image .Label {
           top: 4px;
           left: 275px; } }
@@ -107,7 +107,7 @@ input, button {
           display: block; }
         .Body_wrapper .Composition_body .Composition .Composition_image .Label_listItem .listItem_desktop {
           display: none; } }
-      @media screen and (min-width: 1025px) {
+      @media screen and (min-width: 901px) {
         .Body_wrapper .Composition_body .Composition .Composition_image .Label_listItem {
           margin-bottom: 23px; }
           .Body_wrapper .Composition_body .Composition .Composition_image .Label_listItem .listItem_mobile {
@@ -119,7 +119,7 @@ input, button {
         font-size: 13px;
         color: #069;
         cursor: pointer; }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 901px) {
       .Body_wrapper .Composition_body .Composition .Composition_image .active {
         background: #fff; } }
     .Body_wrapper .Composition_body .Composition .Composition_image .active .listItem_desktop {
@@ -130,7 +130,7 @@ input, button {
       color: #fff;
       border-color: #666; }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 901px) {
   .ComponentInfo {
     float: right; } }
 .ComponentInfo .ComponentInfo_details {
@@ -138,7 +138,7 @@ input, button {
   padding: 15px 20px 15px 35px;
   border-top: 2px solid #EE7D11;
   background: #f8f8f8; }
-  @media screen and (min-width: 1025px) {
+  @media screen and (min-width: 901px) {
     .ComponentInfo .ComponentInfo_details {
       max-height: 300px;
       width: 215px;
@@ -190,7 +190,7 @@ input, button {
     border: none;
     border-bottom: 1px solid #d8d8d8;
     height: auto; }
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 901px) {
       .ComponentInfo .ComponentInfo_details.ComponentInfo_details--disable {
         display: none; } }
     .ComponentInfo .ComponentInfo_details.ComponentInfo_details--disable .Components_heading h3 {

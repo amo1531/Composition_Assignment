@@ -2,17 +2,17 @@
 
 
     $device-range-mobile: 320px;
-    $device-range-ipad: 600px;
-    $device-range-widescreen: 1025px; 
+    $device-range-ipad: 900px;
+    $device-range-widescreen: 901px; 
 
 
-    @if $type == mobile{  //320px
+    @if $type == mobile{  //320px to 767px
     	@media screen and (min-width: $device-range-mobile){ 
     		@content;
     	}
     }
 
-    @if $type == ipad{ //761px to 999px
+    @if $type == ipad{ //768px to 999px
     	@media screen and (min-width: $device-range-ipad){
     		@content;
     	}
