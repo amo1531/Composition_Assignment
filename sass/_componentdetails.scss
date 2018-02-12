@@ -26,6 +26,9 @@
 				margin-bottom: 18px;
 				text-align: center;
 				font-size: 11px;
+				@include media-query(widescreen) {
+					display: none;
+				}
 		}
 
 		.Components_heading {

@@ -159,6 +159,9 @@ input, button {
     margin-bottom: 18px;
     text-align: center;
     font-size: 11px; }
+    @media screen and (min-width: 901px) {
+      .ComponentInfo .ComponentInfo_details .CircleIndex {
+        display: none; } }
   .ComponentInfo .ComponentInfo_details .Components_heading h3 {
     padding: 0 25px 10px 0;
     margin-bottom: 10px;

@@ -16,24 +16,22 @@ $(document).ready ->
 	else 
 		canvas.height = 300
 		canvas.width = 550
-	yfromtop=25
-	ycommon=40
+		
 	$.each(pivotpoints,(index,value) ->
 		xcord = pivotpoints[index].x
 		ycord = pivotpoints[index].y
-		# console.log(xcord,ycord)
+		idcord=pivotpoints[index].id.toString()
+		topHeight=25+idcord*40
 		c.beginPath()
 		c.strokeStyle = "#666666"
 		c.moveTo(xcord, ycord)
 		if (screenWidth < 900)
-			c.lineTo(265,yfromtop)
-			c.lineTo(340,yfromtop)
-			yfromtop=yfromtop+ycommon
+			c.lineTo(265,topHeight)
+			c.lineTo(340,topHeight)
 			c.stroke()
 		else
-			c.lineTo(265,yfromtop)
-			c.lineTo(500,yfromtop)
-			yfromtop=yfromtop+ycommon
+			c.lineTo(265,topHeight)
+			c.lineTo(500,topHeight)
 			c.stroke()
 	)
 	
@@ -50,26 +48,6 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		extendPoint = $(this).attr('pivotpoint')
-		# console.log(jQuery.type(extendPoint))
-		# console.log(extendPoint)
-		$.each(pivotpoints,(index,value) ->
-			xcord=pivotpoints[index].x
-			ycord=pivotpoints[index].y
-			idcord=pivotpoints[index].id.toString()
-			# console.log("cords"+xcord,ycord,idcord,extendPoint)
-			console.log("Type of Idcord"+jQuery.type(idcord))
-			console.log("idcords -"+idcord,"extendcord -"+extendPoint)
-			# console.log("result of equals "+extendPoint == idcord)
-			if (extendPoint == idcord && screenWidth > 900)
-				console.log("inside")
-				c.beginPath()
-				xyz=25+idcord*40;
-				c.moveTo(500,xyz)
-				c.lineTo(600,xyz)
-				c.stroke()
-		)
-	
 		compositionSec=$('.ComponentInfo_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relpoint')
@@ -77,7 +55,25 @@ $(document).ready ->
 			else	
 				$(compElement).addClass("ComponentInfo_details--disable")
 
-	
+		if(screenWidth > 900) 
+			$.each(pivotpoints,(index,value) ->
+				idcord=pivotpoints[index].id.toString()
+				topHeight=25+idcord*40
+				# console.log("cords"+xcord,ycord,idcord,activePoint)
+				# console.log("Type of Idcord"+jQuery.type(idcord))
+				# console.log("idcords -"+idcord,"extendcord -"+activePoint)
+				# console.log("result of equals "+activePoint == idcord)
+				if (activePoint == idcord)
+					# console.log("idcords from array -"+idcord,"listItem -"+activePoint)
+					c.beginPath()
+					c.moveTo(500,topHeight)
+					c.lineTo(600,topHeight)
+					c.stroke()
+				else
+					console.log "topHeight"+topHeight
+					c.clearRect(500,topHeight-10,100,20)
+					# console.log("else idcords from array -"+idcord," else listItem -"+activePoint)
+			)
 
 # /*========================================== Image Dots Click =============================================*/
 
