@@ -73,7 +73,8 @@ input, button {
     .Body_wrapper .Composition_body .Composition .Composition_image .Composition_image_canvasLines {
       position: absolute;
       top: 0;
-      left: 0; }
+      left: 0;
+      z-index: 100; }
     .Body_wrapper .Composition_body .Composition .Composition_image .Composition_image_link {
       position: absolute;
       height: 13px;
@@ -89,7 +90,8 @@ input, button {
       @media screen and (min-width: 901px) {
         .Body_wrapper .Composition_body .Composition .Composition_image .Label {
           top: 4px;
-          left: 275px; } }
+          left: 275px;
+          z-index: 102; } }
     .Body_wrapper .Composition_body .Composition .Composition_image .Label_listItem {
       list-style-type: none;
       margin-bottom: 20px;

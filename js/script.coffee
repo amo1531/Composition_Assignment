@@ -15,7 +15,7 @@ $(document).ready ->
 		canvas.width = 300
 	else 
 		canvas.height = 300
-		canvas.width = 550
+		canvas.width = 570
 		
 	$.each(pivotpoints,(index,value) ->
 		xcord = pivotpoints[index].x
@@ -67,13 +67,36 @@ $(document).ready ->
 					# console.log("idcords from array -"+idcord,"listItem -"+activePoint)
 					c.beginPath()
 					c.moveTo(500,topHeight)
-					c.lineTo(600,topHeight)
+					c.lineTo(550,topHeight)
+					c.arc(550,topHeight,5,0,2 * Math.PI,false)
+					c.fillStyle = '#666666'
+					c.fill()
 					c.stroke()
 				else
 					console.log "topHeight"+topHeight
 					c.clearRect(500,topHeight-10,100,20)
 					# console.log("else idcords from array -"+idcord," else listItem -"+activePoint)
 			)
+
+# /*========================================== Cross Click ==================================================*/
+	$('.CrossButton').on 'click', (e) ->
+		e.preventDefault()
+		$(this).parent().parent().addClass('ComponentInfo_details--disable')
+		$(this).parent().find(".Components_wrapper").css({"display":"none"})
+		$(this).css({"display":"none"})
+
+		pivotpointList = $('.Composition_image').find('.Composition_image_link')
+		for elements in pivotpointList
+			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
+				$(elements).removeClass('active')
+
+		labelList = $('.Composition_image').find('.Label_listItem')
+		for elements in labelList
+			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
+				$(elements).removeClass('active')		
+
+		# activePoint=$(this).parent().parent.attr('relpoint')
+
 
 # /*========================================== Image Dots Click =============================================*/
 
@@ -95,25 +118,6 @@ $(document).ready ->
 				$(compElement).removeClass("ComponentInfo_details--disable")
 			else	
 				$(compElement).addClass("ComponentInfo_details--disable")
-
-
-
-# /*========================================== Cross Click ==================================================*/
-	$('.CrossButton').on 'click', (e) ->
-		e.preventDefault()
-		$(this).parent().parent().addClass('ComponentInfo_details--disable')
-		$(this).parent().find(".Components_wrapper").css({"display":"none"})
-		$(this).css({"display":"none"})
-
-		pivotpointList = $('.Composition_image').find('.Composition_image_link')
-		for elements in pivotpointList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
-				$(elements).removeClass('active')
-
-		labelList = $('.Composition_image').find('.Label_listItem')
-		for elements in labelList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
-				$(elements).removeClass('active')		
 
 
 

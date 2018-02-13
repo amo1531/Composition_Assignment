@@ -42,6 +42,7 @@
 		
 				.Composition_image_canvasLines {
 					position: absolute; top: 0; left: 0;
+					z-index: 100;
 				}
 
 				.Composition_image_link {
@@ -60,6 +61,7 @@
 						@include media-query(widescreen) {
 							top:4px;
 							left:275px;
+							z-index: 102;
 						}
 					}
 					

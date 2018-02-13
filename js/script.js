@@ -29,7 +29,7 @@
       canvas.width = 300;
     } else {
       canvas.height = 300;
-      canvas.width = 550;
+      canvas.width = 570;
     }
     $.each(pivotpoints, function(index, value) {
       var idcord, topHeight, xcord, ycord;
@@ -80,7 +80,10 @@
           if (activePoint === idcord) {
             c.beginPath();
             c.moveTo(500, topHeight);
-            c.lineTo(600, topHeight);
+            c.lineTo(550, topHeight);
+            c.arc(550, topHeight, 5, 0, 2 * Math.PI, false);
+            c.fillStyle = '#666666';
+            c.fill();
             return c.stroke();
           } else {
             console.log("topHeight" + topHeight);
@@ -88,31 +91,6 @@
           }
         });
       }
-    });
-    $('.Composition_image_link').on("click", function() {
-      var activePoint, compElement, compositionSec, elements, i, j, len, len1, pivotpointList, results;
-      $('.Label_listItem').removeClass('active');
-      $('.Composition_image_link').removeClass('active');
-      activePoint = $(this).attr('pivotpoint');
-      pivotpointList = $('.Label').find('.Label_listItem');
-      for (i = 0, len = pivotpointList.length; i < len; i++) {
-        elements = pivotpointList[i];
-        if (activePoint === $(elements).attr("pivotpoint")) {
-          $(elements).addClass('active');
-          $(this).toggleClass('active');
-        }
-      }
-      compositionSec = $('.ComponentInfo_details');
-      results = [];
-      for (j = 0, len1 = compositionSec.length; j < len1; j++) {
-        compElement = compositionSec[j];
-        if (activePoint === $(compElement).attr('relpoint')) {
-          results.push($(compElement).removeClass("ComponentInfo_details--disable"));
-        } else {
-          results.push($(compElement).addClass("ComponentInfo_details--disable"));
-        }
-      }
-      return results;
     });
     $('.CrossButton').on('click', function(e) {
       var elements, i, j, labelList, len, len1, pivotpointList, results;
@@ -139,6 +117,31 @@
           results.push($(elements).removeClass('active'));
         } else {
           results.push(void 0);
+        }
+      }
+      return results;
+    });
+    $('.Composition_image_link').on("click", function() {
+      var activePoint, compElement, compositionSec, elements, i, j, len, len1, pivotpointList, results;
+      $('.Label_listItem').removeClass('active');
+      $('.Composition_image_link').removeClass('active');
+      activePoint = $(this).attr('pivotpoint');
+      pivotpointList = $('.Label').find('.Label_listItem');
+      for (i = 0, len = pivotpointList.length; i < len; i++) {
+        elements = pivotpointList[i];
+        if (activePoint === $(elements).attr("pivotpoint")) {
+          $(elements).addClass('active');
+          $(this).toggleClass('active');
+        }
+      }
+      compositionSec = $('.ComponentInfo_details');
+      results = [];
+      for (j = 0, len1 = compositionSec.length; j < len1; j++) {
+        compElement = compositionSec[j];
+        if (activePoint === $(compElement).attr('relpoint')) {
+          results.push($(compElement).removeClass("ComponentInfo_details--disable"));
+        } else {
+          results.push($(compElement).addClass("ComponentInfo_details--disable"));
         }
       }
       return results;
