@@ -35,7 +35,7 @@
       var idcord, topHeight, xcord, ycord;
       xcord = pivotpoints[index].x;
       ycord = pivotpoints[index].y;
-      idcord = pivotpoints[index].id.toString();
+      idcord = pivotpoints[index].id;
       topHeight = 25 + idcord * 40;
       c.beginPath();
       c.strokeStyle = "#666666";
@@ -45,9 +45,21 @@
         c.lineTo(340, topHeight);
         return c.stroke();
       } else {
-        c.lineTo(265, topHeight);
-        c.lineTo(500, topHeight);
-        return c.stroke();
+        if (idcord === 0) {
+          c.lineTo(265, topHeight);
+          c.lineTo(550, topHeight);
+          c.stroke();
+          c.closePath();
+          c.beginPath();
+          c.arc(550, topHeight, 5, 0, 2 * Math.PI, false);
+          c.fillStyle = '#666666';
+          c.fill();
+          return c.stroke();
+        } else {
+          c.lineTo(265, topHeight);
+          c.lineTo(500, topHeight);
+          return c.stroke();
+        }
       }
     });
     $('.Label_listItem').on("click", function() {
@@ -86,40 +98,36 @@
             c.fill();
             return c.stroke();
           } else {
-            console.log("topHeight" + topHeight);
             return c.clearRect(500, topHeight - 10, 100, 20);
           }
         });
       }
     });
     $('.CrossButton').on('click', function(e) {
-      var elements, i, j, labelList, len, len1, pivotpointList, results;
+      var activePoint, elements, i, idcord, j, labelList, len, len1, pivotpointList, topHeight;
       e.preventDefault();
       $(this).parent().parent().addClass('ComponentInfo_details--disable');
       $(this).parent().find(".Components_wrapper").css({
         "display": "none"
       });
-      $(this).css({
-        "display": "none"
-      });
       pivotpointList = $('.Composition_image').find('.Composition_image_link');
+      activePoint = $(this).parent().parent().attr('relpoint');
       for (i = 0, len = pivotpointList.length; i < len; i++) {
         elements = pivotpointList[i];
-        if ($(this).parent().parent().attr('relpoint') === $(elements).attr('pivotpoint')) {
+        if (activePoint === $(elements).attr('pivotpoint')) {
           $(elements).removeClass('active');
         }
       }
       labelList = $('.Composition_image').find('.Label_listItem');
-      results = [];
       for (j = 0, len1 = labelList.length; j < len1; j++) {
         elements = labelList[j];
-        if ($(this).parent().parent().attr('relpoint') === $(elements).attr('pivotpoint')) {
-          results.push($(elements).removeClass('active'));
-        } else {
-          results.push(void 0);
+        if (activePoint === $(elements).attr('pivotpoint')) {
+          $(elements).removeClass('active');
         }
       }
-      return results;
+      idcord = pivotpoints[activePoint].id;
+      topHeight = 25 + idcord * 40;
+      return c.clearRect(500, topHeight - 10, 100, 20);
     });
     $('.Composition_image_link').on("click", function() {
       var activePoint, compElement, compositionSec, elements, i, j, len, len1, pivotpointList, results;
@@ -147,19 +155,14 @@
       return results;
     });
     return $(".Components_heading h3").on("click", function() {
-      var elements, i, j, labelList, len, len1, pivotpointList, results;
+      var activePoint, elements, i, j, labelList, len, len1, pivotpointList, results;
       $(this).parent().parent().removeClass("ComponentInfo_details--disable");
       $(this).parent().parent().siblings('div').addClass("ComponentInfo_details--disable");
-      $(this).siblings('.CrossButton').css({
-        "display": "block"
-      });
-      $(this).parent().parent().siblings('div').find('a').css({
-        "display": "none"
-      });
       pivotpointList = $('.Composition_image').find('.Composition_image_link');
+      activePoint = $(this).parent().parent().attr('relpoint');
       for (i = 0, len = pivotpointList.length; i < len; i++) {
         elements = pivotpointList[i];
-        if ($(this).parent().parent().attr('relpoint') === $(elements).attr('pivotpoint')) {
+        if (activePoint === $(elements).attr('pivotpoint')) {
           $(elements).addClass('active');
         } else {
           $(elements).removeClass('active');
@@ -169,7 +172,7 @@
       results = [];
       for (j = 0, len1 = labelList.length; j < len1; j++) {
         elements = labelList[j];
-        if ($(this).parent().parent().attr('relpoint') === $(elements).attr('pivotpoint')) {
+        if (activePoint === $(elements).attr('pivotpoint')) {
           results.push($(elements).addClass('active'));
         } else {
           results.push($(elements).removeClass('active'));

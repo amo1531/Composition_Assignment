@@ -6,7 +6,6 @@ $(document).ready ->
 					{id:3,x:210,y:174}
 				]
 
-	# console.log(jQuery.type(pivotpoints[0].id))
 	canvas = document.querySelector("canvas")
 	c = canvas.getContext("2d")
 	screenWidth = $(window).width()
@@ -20,7 +19,7 @@ $(document).ready ->
 	$.each(pivotpoints,(index,value) ->
 		xcord = pivotpoints[index].x
 		ycord = pivotpoints[index].y
-		idcord=pivotpoints[index].id.toString()
+		idcord=pivotpoints[index].id
 		topHeight=25+idcord*40
 		c.beginPath()
 		c.strokeStyle = "#666666"
@@ -30,9 +29,20 @@ $(document).ready ->
 			c.lineTo(340,topHeight)
 			c.stroke()
 		else
-			c.lineTo(265,topHeight)
-			c.lineTo(500,topHeight)
-			c.stroke()
+			if(idcord == 0) 
+				c.lineTo(265,topHeight)
+				c.lineTo(550,topHeight)
+				c.stroke()
+				c.closePath()
+				c.beginPath()
+				c.arc(550,topHeight,5,0,2 * Math.PI,false)
+				c.fillStyle = '#666666'
+				c.fill()
+				c.stroke()
+			else
+				c.lineTo(265,topHeight)
+				c.lineTo(500,topHeight)
+				c.stroke()
 	)
 	
 # /*========================================== Label Click ==================================================*/	
@@ -57,14 +67,11 @@ $(document).ready ->
 
 		if(screenWidth > 900) 
 			$.each(pivotpoints,(index,value) ->
+
 				idcord=pivotpoints[index].id.toString()
 				topHeight=25+idcord*40
-				# console.log("cords"+xcord,ycord,idcord,activePoint)
-				# console.log("Type of Idcord"+jQuery.type(idcord))
-				# console.log("idcords -"+idcord,"extendcord -"+activePoint)
-				# console.log("result of equals "+activePoint == idcord)
+
 				if (activePoint == idcord)
-					# console.log("idcords from array -"+idcord,"listItem -"+activePoint)
 					c.beginPath()
 					c.moveTo(500,topHeight)
 					c.lineTo(550,topHeight)
@@ -73,9 +80,7 @@ $(document).ready ->
 					c.fill()
 					c.stroke()
 				else
-					console.log "topHeight"+topHeight
 					c.clearRect(500,topHeight-10,100,20)
-					# console.log("else idcords from array -"+idcord," else listItem -"+activePoint)
 			)
 
 # /*========================================== Cross Click ==================================================*/
@@ -83,19 +88,24 @@ $(document).ready ->
 		e.preventDefault()
 		$(this).parent().parent().addClass('ComponentInfo_details--disable')
 		$(this).parent().find(".Components_wrapper").css({"display":"none"})
-		$(this).css({"display":"none"})
-
+	
 		pivotpointList = $('.Composition_image').find('.Composition_image_link')
+		activePoint = $(this).parent().parent().attr('relpoint')
+
 		for elements in pivotpointList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
+			if activePoint == $(elements).attr('pivotpoint')
 				$(elements).removeClass('active')
 
 		labelList = $('.Composition_image').find('.Label_listItem')
 		for elements in labelList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
-				$(elements).removeClass('active')		
+			if activePoint == $(elements).attr('pivotpoint')
+				$(elements).removeClass('active')
 
-		# activePoint=$(this).parent().parent.attr('relpoint')
+		idcord=pivotpoints[activePoint].id
+		topHeight=25+idcord*40	
+		c.clearRect(500,topHeight-10,100,20)
+		
+
 
 
 # /*========================================== Image Dots Click =============================================*/
@@ -105,7 +115,6 @@ $(document).ready ->
 		$('.Composition_image_link').removeClass 'active'
 		activePoint = $(this).attr('pivotpoint')
 		pivotpointList = $('.Label').find('.Label_listItem')
-
 
 		for elements in pivotpointList
 			if activePoint == $(elements).attr("pivotpoint")
@@ -126,19 +135,18 @@ $(document).ready ->
 	$(".Components_heading h3").on "click", () ->
 		$(this).parent().parent().removeClass("ComponentInfo_details--disable")
 		$(this).parent().parent().siblings('div').addClass("ComponentInfo_details--disable")
-		$(this).siblings('.CrossButton').css({"display":"block"})
-		$(this).parent().parent().siblings('div').find('a').css({"display":"none"})
 
 		pivotpointList = $('.Composition_image').find('.Composition_image_link')
+		activePoint = $(this).parent().parent().attr('relpoint')
 		for elements in pivotpointList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
+			if activePoint == $(elements).attr('pivotpoint')
 				$(elements).addClass('active')
 			else	
 				$(elements).removeClass('active')
 
 		labelList = $('.Composition_image').find('.Label_listItem')
 		for elements in labelList
-			if $(this).parent().parent().attr('relpoint') == $(elements).attr('pivotpoint')
+			if activePoint == $(elements).attr('pivotpoint')
 				$(elements).addClass('active')	
 			else		
 				$(elements).removeClass('active')	
