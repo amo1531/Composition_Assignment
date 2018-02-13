@@ -58,12 +58,12 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.ComponentInfo_details')
+		compositionSec=$('.Component_info_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relpoint')
-				$(compElement).removeClass("ComponentInfo_details--disable")
+				$(compElement).removeClass("Component_info_details--disable")
 			else	
-				$(compElement).addClass("ComponentInfo_details--disable")
+				$(compElement).addClass("Component_info_details--disable")
 
 		if(screenWidth > 900) 
 			$.each(pivotpoints,(index,value) ->
@@ -86,7 +86,7 @@ $(document).ready ->
 # /*========================================== Cross Click ==================================================*/
 	$('.CrossButton').on 'click', (e) ->
 		e.preventDefault()
-		$(this).parent().parent().addClass('ComponentInfo_details--disable')
+		$(this).parent().parent().addClass('Component_info_details--disable')
 		$(this).parent().find(".Components_wrapper").css({"display":"none"})
 	
 		pivotpointList = $('.Composition_image').find('.Composition_image_link')
@@ -121,21 +121,38 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.ComponentInfo_details')
+		compositionSec=$('.Component_info_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relpoint')
-				$(compElement).removeClass("ComponentInfo_details--disable")
+				$(compElement).removeClass("Component_info_details--disable")
 			else	
-				$(compElement).addClass("ComponentInfo_details--disable")
+				$(compElement).addClass("Component_info_details--disable")
 
+		if(screenWidth > 900) 
+			$.each(pivotpoints,(index,value) ->
+
+				idcord=pivotpoints[index].id.toString()
+				topHeight=25+idcord*40
+
+				if (activePoint == idcord)
+					c.beginPath()
+					c.moveTo(500,topHeight)
+					c.lineTo(550,topHeight)
+					c.arc(550,topHeight,5,0,2 * Math.PI,false)
+					c.fillStyle = '#666666'
+					c.fill()
+					c.stroke()
+				else
+					c.clearRect(500,topHeight-10,100,20)
+			)
 
 
 # /*========================================== Component Heading Click ======================================*/
 
 	$(".Components_heading h3").on "click", () ->
+
 		$(this).parent().parent().removeClass("ComponentInfo_details--disable")
 		$(this).parent().parent().siblings('div').addClass("ComponentInfo_details--disable")
-
 		pivotpointList = $('.Composition_image').find('.Composition_image_link')
 		activePoint = $(this).parent().parent().attr('relpoint')
 		for elements in pivotpointList

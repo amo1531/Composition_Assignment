@@ -4,7 +4,7 @@
 		max-width: 800px;
 		margin: 0 auto;
 	}
-	.Composition_heading {
+	.CompositionHeading {
 		font-family: "Source Sans Pro", arial, helvetica, sans-serif;
 		font-size: 16px;
 		color: $black;
@@ -16,8 +16,9 @@
 			font-weight: normal;
 		}
 	}
-	.Composition_body{
+	.CompositionBody {
 		@include clearfix;
+		
 		.Composition {
 			@include media-query(widescreen) {
 				width: 480px;
@@ -50,6 +51,7 @@
 						height: 13px; width: 13px;
 						border-radius: 50%;
 						background: url("../Images/dot.svg") no-repeat center center;
+						z-index: 101;
 
 						&.active {
 							background: url("../Images/dot-active.svg") no-repeat center center;						
