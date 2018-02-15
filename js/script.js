@@ -2,6 +2,9 @@
 (function() {
   $(document).ready(function() {
     var c, canvas, pivotpoints, screenWidth;
+    $(window).bind('resize', function() {
+      return window.location.href = window.location.href;
+    });
     pivotpoints = [
       {
         id: 0,

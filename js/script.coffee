@@ -1,12 +1,16 @@
+# $(window).resize(function(){location.reload();});
 $(document).ready ->
-	# square()
+
+	$(window).bind 'resize',() ->
+    	window.location.href = window.location.href;
+
 	pivotpoints=[
 					{id:0,x:129,y:109},
 					{id:1,x:182,y:126},
 					{id:2,x:205,y:146},
 					{id:3,x:210,y:174}
 				]
-#/* *************************** For canva on page Load ********************************* */#
+#/* *************************** For canvas on page Load ********************************* */#
 
 	canvas = document.querySelector("canvas")
 	c = canvas.getContext("2d")
