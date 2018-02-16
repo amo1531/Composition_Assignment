@@ -2,8 +2,13 @@
 (function() {
   $(document).ready(function() {
     var c, canvas, pivotpoints, screenWidth;
-    $(window).bind('resize', function() {
-      return window.location.href = window.location.href;
+    $(window).bind('resize', function(e) {
+      if (window.RT) {
+        clearTimeout(window.RT);
+      }
+      return window.RT = setTimeout((function() {
+        this.location.reload(false);
+      }), 100);
     });
     pivotpoints = [
       {
@@ -39,6 +44,14 @@
       xcord = pivotpoints[index].x;
       ycord = pivotpoints[index].y;
       idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
+      idcord = pivotpoints[index].id;
       topHeight = 25 + idcord * 40;
       c.beginPath();
       c.strokeStyle = "#666666";
@@ -65,14 +78,14 @@
         }
       }
     });
-    $('.Label_listItem , .Composition_image_link').on("click", function() {
+    $('.Label_listItem , .CompositionImage_link').on("click", function() {
       var activePoint, className, compElement, compositionSec, elements, i, j, len, len1, pivotpointList;
       $('.Label_listItem').removeClass('active');
-      $('.Composition_image_link').removeClass('active');
+      $('.CompositionImage_link').removeClass('active');
       className = $(this).attr('class');
       activePoint = $(this).attr('pivotpoint');
       if (className === 'Label_listItem') {
-        pivotpointList = $('.Composition_image').find('.Composition_image_link');
+        pivotpointList = $('.Composition_image').find('.CompositionImage_link');
       } else {
         pivotpointList = $('.Label').find('.Label_listItem');
       }
@@ -83,13 +96,13 @@
           $(this).toggleClass('active');
         }
       }
-      compositionSec = $('.Component_info_details');
+      compositionSec = $('.Component_details');
       for (j = 0, len1 = compositionSec.length; j < len1; j++) {
         compElement = compositionSec[j];
         if (activePoint === $(compElement).attr('relpoint')) {
-          $(compElement).removeClass("Component_info_details--disable");
+          $(compElement).removeClass("Component_details--disable");
         } else {
-          $(compElement).addClass("Component_info_details--disable");
+          $(compElement).addClass("Component_details--disable");
         }
       }
       if (screenWidth > 900) {
@@ -113,11 +126,11 @@
     });
     $('.CrossButton').on('click', function() {
       var activePoint, elements, i, idcord, j, labelList, len, len1, pivotpointList, topHeight;
-      $(this).parent().parent().addClass('Component_info_details--disable');
-      $(this).parent().find(".Components_wrapper").css({
+      $(this).parent().parent().addClass('Component_details--disable');
+      $(this).parent().find(".Component_wrapper").css({
         "display": "none"
       });
-      pivotpointList = $('.Composition_image').find('.Composition_image_link');
+      pivotpointList = $('.Composition_image').find('.CompositionImage_link');
       activePoint = $(this).parent().parent().attr('relpoint');
       for (i = 0, len = pivotpointList.length; i < len; i++) {
         elements = pivotpointList[i];
@@ -136,12 +149,12 @@
       topHeight = 25 + idcord * 40;
       return c.clearRect(500, topHeight - 10, 100, 20);
     });
-    return $(".Components_heading h3").on("click", function() {
+    return $(".Component_heading h3").on("click", function() {
       var activePoint, elements, i, j, labelList, len, len1, pivotpointList, results;
       console.log("heading called");
-      $(this).parent().parent().removeClass("Component_info_details--disable");
-      $(this).parent().parent().siblings('div').addClass("Component_info_details--disable");
-      pivotpointList = $('.Composition_image').find('.Composition_image_link');
+      $(this).parent().parent().removeClass("Component_details--disable");
+      $(this).parent().parent().siblings('div').addClass("Component_details--disable");
+      pivotpointList = $('.Composition_image').find('.CompositionImage_link');
       activePoint = $(this).parent().parent().attr('relpoint');
       for (i = 0, len = pivotpointList.length; i < len; i++) {
         elements = pivotpointList[i];

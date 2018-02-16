@@ -1,16 +1,20 @@
 # $(window).resize(function(){location.reload();});
 $(document).ready ->
-
-	$(window).bind 'resize',() ->
-    	window.location.href = window.location.href;
-
+	$(window).bind 'resize', (e) ->
+		if window.RT
+			clearTimeout window.RT
+		window.RT = setTimeout((->
+			@location.reload false
+			return
+		), 100)
+		
 	pivotpoints=[
 					{id:0,x:129,y:109},
 					{id:1,x:182,y:126},
 					{id:2,x:205,y:146},
 					{id:3,x:210,y:174}
 				]
-#/* *************************** For canvas on page Load ********************************* */#
+#/* *************************** For canva on page Load ********************************* */#
 
 	canvas = document.querySelector("canvas")
 	c = canvas.getContext("2d")
@@ -25,8 +29,25 @@ $(document).ready ->
 	$.each(pivotpoints,(index,value) ->
 		xcord = pivotpoints[index].x
 		ycord = pivotpoints[index].y
-		idcord=pivotpoints[index].id
-		topHeight=25+idcord*40
+		
+
+
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+		idcord = pivotpoints[index].id
+
+		
+
+
+
+
+		topHeight = 25+idcord*40
 		c.beginPath()
 		c.strokeStyle = "#666666"
 		c.moveTo(xcord, ycord)
@@ -53,15 +74,17 @@ $(document).ready ->
 	
 # /*========================================== Label Click ==================================================*/	
 
-	$('.Label_listItem , .Composition_image_link').on "click", () -> 
+	$('.Label_listItem , .CompositionImage_link').on "click", () -> 
 
 		$('.Label_listItem').removeClass 'active'
-		$('.Composition_image_link').removeClass 'active'
+		$('.CompositionImage_link').removeClass 'active'
+
+		
 		className = $(this).attr('class')
 		activePoint = $(this).attr('pivotpoint')
 
 		if(className == 'Label_listItem')
-			pivotpointList = $('.Composition_image').find('.Composition_image_link')
+			pivotpointList = $('.Composition_image').find('.CompositionImage_link')
 		else
 			pivotpointList = $('.Label').find('.Label_listItem')
 
@@ -70,12 +93,12 @@ $(document).ready ->
 				$(elements).addClass('active')
 				$(this).toggleClass('active')
 
-		compositionSec=$('.Component_info_details')
+		compositionSec=$('.Component_details')
 		for compElement in compositionSec
 			if activePoint == $(compElement).attr('relpoint')
-				$(compElement).removeClass("Component_info_details--disable")
+				$(compElement).removeClass("Component_details--disable")
 			else	
-				$(compElement).addClass("Component_info_details--disable")
+				$(compElement).addClass("Component_details--disable")
 
 		if(screenWidth > 900) 
 			$.each(pivotpoints,(index,value) ->
@@ -98,10 +121,10 @@ $(document).ready ->
 
 	$('.CrossButton').on 'click', () ->
 		
-		$(this).parent().parent().addClass('Component_info_details--disable')
-		$(this).parent().find(".Components_wrapper").css({"display":"none"})
+		$(this).parent().parent().addClass('Component_details--disable')
+		$(this).parent().find(".Component_wrapper").css({"display":"none"})
 	
-		pivotpointList = $('.Composition_image').find('.Composition_image_link')
+		pivotpointList = $('.Composition_image').find('.CompositionImage_link')
 		activePoint = $(this).parent().parent().attr('relpoint')
 
 		for elements in pivotpointList
@@ -120,13 +143,13 @@ $(document).ready ->
 
 # /*========================================== Component Heading Click ======================================*/
 
-	$(".Components_heading h3").on "click", () ->
+	$(".Component_heading h3").on "click", () ->
 
 		console.log("heading called")
-		$(this).parent().parent().removeClass("Component_info_details--disable")
-		$(this).parent().parent().siblings('div').addClass("Component_info_details--disable")
+		$(this).parent().parent().removeClass("Component_details--disable")
+		$(this).parent().parent().siblings('div').addClass("Component_details--disable")
 
-		pivotpointList = $('.Composition_image').find('.Composition_image_link')
+		pivotpointList = $('.Composition_image').find('.CompositionImage_link')
 		activePoint = $(this).parent().parent().attr('relpoint')
 		
 		for elements in pivotpointList

@@ -5,8 +5,8 @@
 		margin: 0 auto;
 	}
 	.CompositionHeading {
-		font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-		font-size: 16px;
+		font-family: $primary-font;
+		font-size: $size15;
 		color: $black;
 		background: $light-blue;
 		padding: 7px 10px;
@@ -18,110 +18,106 @@
 	}
 	.CompositionBody {
 		@include clearfix;
-		
-		.Composition {
-			@include media-query(widescreen) {
-				width: 480px;
-				float: left;
-			}
-			.Composition_info {
-				p {
-					padding: 10px 0 0;
-					color: $grey;
-					font-size: 13px;
-					line-height: 1.5;
-					font-weight: 300;
-					margin-bottom: 20px;
-				}
-
-			}
-		
-			.Composition_image {
-				height: 300px;
-				position: relative;
-				min-height: 300px;
-		
-				.Composition_image_canvasLines {
-					position: absolute; top: 0; left: 0;
-					z-index: 100;
-				}
-
-				.Composition_image_link {
-						position: absolute;
-						height: 13px; width: 13px;
-						border-radius: 50%;
-						background: url("../Images/dot.svg") no-repeat center center;
-						z-index: 101;
-
-						&.active {
-							background: url("../Images/dot-active.svg") no-repeat center center;						
-						}
-				}
-
-				.Label {
-						position: absolute; top: 16px; left: 300px;
-						@include media-query(widescreen) {
-							top:4px;
-							left:275px;
-							z-index: 102;
-						}
-					}
-					
-				.Label_listItem {
-					list-style-type: none;  
-					margin-bottom: 20px;
-					border-radius: 50%;
-					@include media-query(mobile) {
-						.listItem_mobile {
-							height: 18px; width: 18px;
-							border-radius: 50%;
-							border: 1px solid $dark-Grey ;
-							color: $grey ;
-							background: $white;
-							text-align: center;
-							font-size: 13px;
-							display: block;
-						}
-						.listItem_desktop {
-							display: none;
-						}
-						
-					}
-					@include media-query(widescreen) {
-						margin-bottom: 23px;
-					
-						.listItem_mobile {
-							display: none;
-						}
-						.listItem_desktop {
-							display: block;
-						}	
-					}
-					.listItem_desktop {
-						font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-						font-size: 13px;
-						color: $blue;
-						cursor: pointer;
-					}
-					
-				}
-				.active {
-					@include media-query(widescreen){
-						background: $white;
-
-					}
-					.listItem_desktop{
-						color: $black;
-						font-weight: bolder;
-					}
-
-					.listItem_mobile{
-						background: $grey;
-						color: $white;
-						border-color: $grey;
-					}
-				}
-			}
-		}
 	}	
 }
+
+.Composition {
+	@include media-query(widescreen) {
+		width: 480px;
+		float: left;
+	}
+	.Composition_info {
+		p {
+			padding: 10px 0 0;
+			color: $grey;
+			font-size: $size13;
+			line-height: 1.5;
+			font-weight: 300;
+			margin-bottom: 20px;
+		}
+
+	}
+
+	.Composition_image {
+		height: 300px;
+		position: relative;
+		min-height: 300px;
+	}
+	.CompositionImage_canvasLines {
+		position: absolute; top: 0; left: 0;
+		z-index: 100;
+	}
+}
+
+.Composition_image{
+	.CompositionImage_link {
+		position: absolute;
+		height: 13px; width: 13px;
+		border-radius: 50%;
+		background: url("../Images/dot.svg") no-repeat center center;
+		z-index: 101;
+
+		&.active {
+			background: url("../Images/dot-active.svg") no-repeat center center;						
+		}
+	}
+	.Label {
+		position: absolute; top: 16px; left: 300px;
+		@include media-query(widescreen) {
+			top:4px;
+			left:275px;
+			z-index: 102;
+		}
+	}
+}
+.Label {
+	.Label_listItem {
+		list-style-type: none;  
+		margin-bottom: 20px;
+		border-radius: 50%;
+		
+		.Label_mobile {
+			height: 18px; width: 18px;
+			border-radius: 50%;
+			border: 1px solid $dark-Grey ;
+			color: $grey ;
+			background: $white;
+			text-align: center;
+			font-size: 13px;
+			display: block;
+		}
+		.Label_desktop {
+			display: none;
+		}
+		@include media-query(widescreen) {
+			margin-bottom: 23px;
+			.Label_mobile {
+				display: none;
+			}
+			.Label_desktop {
+				font-family: $primary-font;
+				font-size: 13px;
+				color: $blue;
+				cursor: pointer;
+				display: block;
+			}	
+		}
+	}
+		.active {
+		@include media-query(widescreen){
+			background: $white;
+		}
+		.Label_desktop{
+			color: $black;
+			font-weight: bolder;
+		}
+		.Label_mobile{
+			background: $grey;
+			color: $white;
+			border-color: $grey;
+		}
+	}
+}
+
+
+
