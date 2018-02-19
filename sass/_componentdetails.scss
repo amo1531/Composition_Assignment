@@ -7,6 +7,7 @@
 		padding:15px 20px 15px 35px;
 		border-top: 2px solid #EE7D11;
 		background: #f8f8f8;
+
 		@include media-query(widescreen) {
 			max-height: 300px;
 			width: 215px;
@@ -25,12 +26,13 @@
 		border: 1px solid $grey;
 		font-size: 11px;
 		font-weight: 100;
-		line-height: 1.8;
+		line-height: 1.5;
 		background: $grey;
 		color: $white;
 		margin-bottom: 18px;
 		text-align: center;
 		font-size: $size12;
+
 		@include media-query(widescreen) {
 			display: none;
 		}
@@ -80,9 +82,11 @@
 		border: none;
 		border-bottom: 1px solid $light-Grey;
 		height: auto;
+
 		@include media-query(widescreen) {
 			display: none;
 		}
+
 		.Component_heading {
 			h3 {
 				font-family: $primary-font;
@@ -92,19 +96,20 @@
 				padding-bottom: 0;
 				border: none;
 				cursor: pointer;
-				}
+			}
 				
 			.CrossButton {
 				display: none;
 			}
 		}
+
 		.Component_circleIndex {
 			cursor:pointer;
 			background: white;
 			border: 1px solid $dark-Grey;
 			color: $grey;
-
 		}
+		
 		.Element_wrapper {
 			display: none;
 		}

@@ -89,53 +89,53 @@ a:hover {
   z-index: 101; }
   .Composition_image .CompositionImage_link.active {
     background: url("../Images/dot-active.svg") no-repeat center center; }
-.Composition_image .Label {
+
+.Label {
   position: absolute;
   top: 16px;
   left: 300px; }
   @media screen and (min-width: 901px) {
-    .Composition_image .Label {
+    .Label {
       top: 4px;
       left: 275px;
       z-index: 102; } }
-
-.Label .Label_listItem {
-  list-style-type: none;
-  margin-bottom: 20px;
-  border-radius: 50%; }
-  .Label .Label_listItem .Label_mobile {
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    border: 1px solid #999999;
-    color: #666;
-    background: #fff;
-    text-align: center;
-    font-size: 13px;
-    display: block; }
-  .Label .Label_listItem .Label_desktop {
-    display: none; }
+  .Label .Label_listItem {
+    list-style-type: none;
+    margin-bottom: 20px;
+    border-radius: 50%; }
+    .Label .Label_listItem .Label_mobile {
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      border: 1px solid #999999;
+      color: #666;
+      background: #fff;
+      text-align: center;
+      font-size: 13px;
+      display: block; }
+    .Label .Label_listItem .Label_desktop {
+      display: none; }
+    @media screen and (min-width: 901px) {
+      .Label .Label_listItem {
+        margin-bottom: 23px; }
+        .Label .Label_listItem .Label_mobile {
+          display: none; }
+        .Label .Label_listItem .Label_desktop {
+          font-family: "Source Sans Pro", arial, helvetica, sans-serif;
+          font-size: 13px;
+          color: #069;
+          cursor: pointer;
+          display: block; } }
   @media screen and (min-width: 901px) {
-    .Label .Label_listItem {
-      margin-bottom: 23px; }
-      .Label .Label_listItem .Label_mobile {
-        display: none; }
-      .Label .Label_listItem .Label_desktop {
-        font-family: "Source Sans Pro", arial, helvetica, sans-serif;
-        font-size: 13px;
-        color: #069;
-        cursor: pointer;
-        display: block; } }
-@media screen and (min-width: 901px) {
-  .Label .active {
-    background: #fff; } }
-.Label .active .Label_desktop {
-  color: #000;
-  font-weight: bolder; }
-.Label .active .Label_mobile {
-  background: #666;
-  color: #fff;
-  border-color: #666; }
+    .Label .active {
+      background: #fff; } }
+  .Label .active .Label_desktop {
+    color: #000;
+    font-weight: bolder; }
+  .Label .active .Label_mobile {
+    background: #666;
+    color: #fff;
+    border-color: #666; }
 
 @media screen and (min-width: 901px) {
   .Components_info {
@@ -161,7 +161,7 @@ a:hover {
   border: 1px solid #666;
   font-size: 11px;
   font-weight: 100;
-  line-height: 1.8;
+  line-height: 1.5;
   background: #666;
   color: #fff;
   margin-bottom: 18px;

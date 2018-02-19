@@ -35,7 +35,6 @@
 			font-weight: 300;
 			margin-bottom: 20px;
 		}
-
 	}
 
 	.Composition_image {
@@ -43,6 +42,7 @@
 		position: relative;
 		min-height: 300px;
 	}
+
 	.CompositionImage_canvasLines {
 		position: absolute; top: 0; left: 0;
 		z-index: 100;
@@ -61,16 +61,17 @@
 			background: url("../Images/dot-active.svg") no-repeat center center;						
 		}
 	}
-	.Label {
-		position: absolute; top: 16px; left: 300px;
-		@include media-query(widescreen) {
-			top:4px;
-			left:275px;
-			z-index: 102;
-		}
-	}
 }
+
 .Label {
+	position: absolute; top: 16px; left: 300px;
+
+	@include media-query(widescreen) {
+		top:4px;
+		left:275px;
+		z-index: 102;
+	}
+
 	.Label_listItem {
 		list-style-type: none;  
 		margin-bottom: 20px;
@@ -91,6 +92,7 @@
 		}
 		@include media-query(widescreen) {
 			margin-bottom: 23px;
+
 			.Label_mobile {
 				display: none;
 			}
@@ -103,15 +105,18 @@
 			}	
 		}
 	}
-		.active {
-		@include media-query(widescreen){
+
+	.active {
+		@include media-query(widescreen) {
 			background: $white;
 		}
-		.Label_desktop{
+
+		.Label_desktop {
 			color: $black;
 			font-weight: bolder;
 		}
-		.Label_mobile{
+
+		.Label_mobile {
 			background: $grey;
 			color: $white;
 			border-color: $grey;
