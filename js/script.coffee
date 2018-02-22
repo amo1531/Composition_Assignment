@@ -2,36 +2,22 @@ canvas = document.querySelector("canvas")
 c = canvas.getContext("2d")
 imageArray = 
 [
-	{
-		"src":"./Images/sph4.svg",
-		"id":"0"
-	},
-	{
-		"src":"./Images/bsph4.svg",
-		"id":"1"
-	},
-	{
-		"src":"./Images/oct3.svg",
-		"id":"2"
-	},
-	{
-		"src":"./Images/sphi4.svg",
-		"id":"3"
-	}
+	{ "src":"./Images/sph4.svg" },
+	{ "src":"./Images/bsph4.svg" },
+	{ "src":"./Images/oct3.svg" },
+	{ "src":"./Images/sphi4.svg" }
 ]
+random = Math.floor((Math.random() * 4))
+imageSource = imageArray[random].src
+jsonPath = (imageSource.substring(9)).replace("svg","json")
+# console.log(random)
+# console.log("img src "+imageSource+"json Src "+jsonPath)
 
 $(document).ready ->
 	initialize()
-	# $(window).bind('onload',redraw())
-	@canvasColor = '#666666'
-initialize = () ->
-
-	$(window).bind('resize',resizeCanvas)
-	resizeCanvas()
 
 resizeCanvas = () ->
 	canvas.height = 300
-	
 	if ($(window).width() < 900) 
 		c.strokeStyle = "#666666"
 		canvas.width = 300
@@ -40,13 +26,19 @@ resizeCanvas = () ->
 		canvas.width = 570
 		c.strokeStyle = "#666666"
 		redraw()
+
+initialize = () ->
+
+	$('.SphereImage').attr('src',imageSource)
+	$(window).bind('resize',resizeCanvas)
+	resizeCanvas()
+
 	
 #/* *************************** For canva on page Load ********************************* */#
 	
 redraw = () ->
 
-	$.getJSON('JSON/sph4.json',(data) ->
-	
+	$.getJSON('JSON/'+jsonPath,(data) ->
 		$.each(data,(index,value) ->
 			xcord = data[index].x
 			ycord = data[index].y
@@ -101,9 +93,9 @@ $('.Label_listItem , .CompositionImage_link').on "click", () ->
 			$(compElement).addClass("Component_details--disable")
 
 	if($(window).width() > 900) 
-		$.getJSON('JSON/sph4.json',(data) ->
+		$.getJSON('JSON/'+jsonPath,(data) ->
 			$.each(data,(index,value) ->
-				idcord=data[index].id.toString()
+				idcord=data[index].id
 				topHeight=25+idcord*40
 				if (activePoint == idcord)
 					c.beginPath()
@@ -152,7 +144,7 @@ $('.CrossButton , .Component_heading h3').on 'click', () ->
 		else
 			$(elements).removeClass('active')
 
-	$.getJSON('JSON/sph4.json',(data) ->	
+	$.getJSON('JSON/'+jsonPath,(data) ->	
 		$.each(data,(index,value) ->	
 			idcord=data[index].id
 			topHeight=25+idcord*40	
