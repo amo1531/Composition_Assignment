@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="260px" height="260px" viewBox="0 0 260 260" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Cub2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="20.2059061%" cy="55.001432%" fx="20.2059061%" fy="55.001432%" r="59.8614182%" id="radialGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#E8E3DF" offset="83.1174267%"></stop>
+            <stop stop-color="#E4E4E4" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="-4.36389503%" y1="89.6754683%" x2="100%" y2="33.4363364%" id="linearGradient-2">
+            <stop stop-color="#E5E5E5" offset="0%"></stop>
+            <stop stop-color="#9A9999" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.1963619%" y1="28.4515015%" x2="65.3888484%" y2="85.547007%" id="linearGradient-3">
+            <stop stop-color="#FCFCFC" offset="0%"></stop>
+            <stop stop-color="#CFCFCF" offset="100%"></stop>
+        </linearGradient>
+        <radialGradient cx="0%" cy="56.870438%" fx="0%" fy="56.870438%" r="100.698899%" id="radialGradient-4">
+            <stop stop-color="#ADADAD" offset="0%"></stop>
+            <stop stop-color="#EFEFEF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="32.983127%" cy="30.981982%" fx="32.983127%" fy="30.981982%" r="57.8346018%" id="radialGradient-5">
+            <stop stop-color="#FFFDFD" offset="0%"></stop>
+            <stop stop-color="#EFEFEF" offset="100%"></stop>
+        </radialGradient>
+        <radialGradient cx="38.3401606%" cy="64.8235129%" fx="38.3401606%" fy="64.8235129%" r="34.819018%" id="radialGradient-6">
+            <stop stop-color="#F7E8DF" offset="0%"></stop>
+            <stop stop-color="#F6D7C4" offset="100%"></stop>
+        </radialGradient>
+        <linearGradient x1="65.5403068%" y1="31.0629708%" x2="43.7056836%" y2="55.7703832%" id="linearGradient-7">
+            <stop stop-color="#FF6A15" offset="0%"></stop>
+            <stop stop-color="#FFBE99" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Composition-Images" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cub2">
+            <g id="Cub" transform="translate(130.000000, 130.000000) rotate(-180.000000) translate(-130.000000, -130.000000) translate(39.500000, 26.500000)">
+                <polygon id="Mask" fill="url(#radialGradient-1)" points="180.228694 49.3082848 180.367121 154.534537 90.9285856 206.092285 0.460796927 154.53454 0.460796927 52.4536133 90.9285856 0.229614256 180.367121 53.0736289"></polygon>
+                <polygon id="Mask" fill="url(#linearGradient-2)" points="91.0063439 102.196303 180.414565 154.599779 180.229334 52.4593749 90.982787 0.194946293"></polygon>
+                <path d="M90.9429321,206.08264 L0.585937499,154.693964 C0.677236648,154.693964 91.1315652,102.311659 91.1315652,102.311659 L180.296275,154.693964 L90.9429321,206.08264 Z" id="Polygon-1" fill="#D1D1D1" opacity="0.370743937"></path>
+                <path d="M90.4430138,106.478516 L23.7429496,68.5442308 C23.8103451,68.5442308 90.5822597,29.8764648 90.5822597,29.8764648 L156.402198,68.5442305 L90.4430138,106.478516 Z" id="Polygon-1" fill="url(#linearGradient-3)"></path>
+                <polygon id="Polygon-1" fill="url(#radialGradient-4)" transform="translate(56.821843, 123.820697) scale(-1, 1) translate(-56.821843, -123.820697) " points="23.5711112 179.28084 23.5711112 107.070357 90.072572 68.360554 90.072574 140.571037"></polygon>
+                <polygon id="Polygon-1" fill="url(#radialGradient-5)" points="90.072574 179.28084 90.072574 107.070357 156.574035 68.360554 156.574037 140.571037"></polygon>
+                <g transform="translate(33.226383, 39.634954)">
+                    <polygon id="Mask" fill="url(#radialGradient-6)" points="112.518466 30.7836253 112.604888 96.4773627 56.76757 128.665349 0.287679849 96.4773646 0.287679849 32.7472834 56.76757 0.143350337 112.604888 33.134365"></polygon>
+                    <polygon id="Mask" fill="url(#linearGradient-7)" opacity="0.35" points="56.8161152 63.8021117 112.634507 96.5180941 112.518866 32.7508805 56.8014085 0.121706802"></polygon>
+                    <path d="M56.7765267,128.659328 L0.365806284,96.5768948 C0.4228052,96.5768948 56.8942921,63.8741298 56.8942921,63.8741298 L112.560658,96.5768946 L56.7765267,128.659328 Z" id="Polygon-1" fill="#FFFFFF" opacity="0.196070429"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

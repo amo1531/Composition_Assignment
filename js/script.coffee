@@ -1,11 +1,31 @@
 canvas = document.querySelector("canvas")
 c = canvas.getContext("2d")
+imageArray = 
+[
+	{
+		"src":"./Images/sph4.svg",
+		"id":"0"
+	},
+	{
+		"src":"./Images/bsph4.svg",
+		"id":"1"
+	},
+	{
+		"src":"./Images/oct3.svg",
+		"id":"2"
+	},
+	{
+		"src":"./Images/sphi4.svg",
+		"id":"3"
+	}
+]
 
 $(document).ready ->
 	initialize()
-	$(window).bind('onload',redraw())
+	# $(window).bind('onload',redraw())
 	@canvasColor = '#666666'
 initialize = () ->
+
 	$(window).bind('resize',resizeCanvas)
 	resizeCanvas()
 
@@ -24,8 +44,9 @@ resizeCanvas = () ->
 #/* *************************** For canva on page Load ********************************* */#
 	
 redraw = () ->
-	$.getJSON('JSON/data.json',(data) ->
-		console.log("json data" + data)
+
+	$.getJSON('JSON/sph4.json',(data) ->
+	
 		$.each(data,(index,value) ->
 			xcord = data[index].x
 			ycord = data[index].y
@@ -80,7 +101,7 @@ $('.Label_listItem , .CompositionImage_link').on "click", () ->
 			$(compElement).addClass("Component_details--disable")
 
 	if($(window).width() > 900) 
-		$.getJSON('JSON/data.json',(data) ->
+		$.getJSON('JSON/sph4.json',(data) ->
 			$.each(data,(index,value) ->
 				idcord=data[index].id.toString()
 				topHeight=25+idcord*40
@@ -131,7 +152,7 @@ $('.CrossButton , .Component_heading h3').on 'click', () ->
 		else
 			$(elements).removeClass('active')
 
-	$.getJSON('JSON/data.json',(data) ->	
+	$.getJSON('JSON/sph4.json',(data) ->	
 		$.each(data,(index,value) ->	
 			idcord=data[index].id
 			topHeight=25+idcord*40	

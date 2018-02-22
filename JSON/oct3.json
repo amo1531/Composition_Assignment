@@ -1,0 +1,22 @@
+[
+    {   "id":0,
+        "x":135,
+        "y":122,
+        "propertyName":"cadmium selenide"
+    },
+    {   "id":1,
+        "x":163,
+        "y":121,
+        "propertyName":"zinc sulfide"
+    },
+    {   "id":2,
+        "x":170,
+        "y":146,
+        "propertyName":"PC"
+    },
+    {   "id":3,
+        "x":175,
+        "y":165,
+        "propertyName":"zinc sulfide"
+    }
+]
