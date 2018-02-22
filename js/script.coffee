@@ -2,19 +2,23 @@ canvas = document.querySelector("canvas")
 c = canvas.getContext("2d")
 imageArray = 
 [
-	{ "src":"./Images/sph4.svg" },
-	{ "src":"./Images/bsph4.svg" },
-	{ "src":"./Images/oct3.svg" },
-	{ "src":"./Images/sphi4.svg" }
+	{"src":"./Images/sph4.svg"},
+	{"src":"./Images/bsph4.svg"},
+	{"src":"./Images/oct3.svg"},
+	{"src":"./Images/sphi4.svg"}
 ]
+
 random = Math.floor((Math.random() * 4))
 imageSource = imageArray[random].src
 jsonPath = (imageSource.substring(9)).replace("svg","json")
-# console.log(random)
-# console.log("img src "+imageSource+"json Src "+jsonPath)
 
 $(document).ready ->
 	initialize()
+	@canvasColor = '#666666'
+initialize = () ->
+	$('.SphereImage').attr('src',imageSource)
+	$(window).bind('resize',resizeCanvas)
+	resizeCanvas()
 
 resizeCanvas = () ->
 	canvas.height = 300
@@ -26,13 +30,6 @@ resizeCanvas = () ->
 		canvas.width = 570
 		c.strokeStyle = "#666666"
 		redraw()
-
-initialize = () ->
-
-	$('.SphereImage').attr('src',imageSource)
-	$(window).bind('resize',resizeCanvas)
-	resizeCanvas()
-
 	
 #/* *************************** For canva on page Load ********************************* */#
 	
@@ -95,7 +92,7 @@ $('.Label_listItem , .CompositionImage_link').on "click", () ->
 	if($(window).width() > 900) 
 		$.getJSON('JSON/'+jsonPath,(data) ->
 			$.each(data,(index,value) ->
-				idcord=data[index].id
+				idcord=data[index].id.toString()
 				topHeight=25+idcord*40
 				if (activePoint == idcord)
 					c.beginPath()

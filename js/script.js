@@ -25,8 +25,15 @@
   jsonPath = (imageSource.substring(9)).replace("svg", "json");
 
   $(document).ready(function() {
-    return initialize();
+    initialize();
+    return this.canvasColor = '#666666';
   });
+
+  initialize = function() {
+    $('.SphereImage').attr('src', imageSource);
+    $(window).bind('resize', resizeCanvas);
+    return resizeCanvas();
+  };
 
   resizeCanvas = function() {
     canvas.height = 300;
@@ -39,12 +46,6 @@
       c.strokeStyle = "#666666";
       return redraw();
     }
-  };
-
-  initialize = function() {
-    $('.SphereImage').attr('src', imageSource);
-    $(window).bind('resize', resizeCanvas);
-    return resizeCanvas();
   };
 
   redraw = function() {
@@ -113,7 +114,7 @@
       return $.getJSON('JSON/' + jsonPath, function(data) {
         return $.each(data, function(index, value) {
           var idcord, topHeight;
-          idcord = data[index].id;
+          idcord = data[index].id.toString();
           topHeight = 25 + idcord * 40;
           if (activePoint === idcord) {
             c.beginPath();
