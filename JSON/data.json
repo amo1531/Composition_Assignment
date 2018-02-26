@@ -1,0 +1,36 @@
+{
+    "pivotpoints": 
+    {
+            "sph4": 
+            [
+                {   "id":0, "x":129, "y":109, "propertyName":"gold" },
+                {   "id":1, "x":182, "y":126, "propertyName":"dielectric" },
+                {   "id":2, "x":205, "y":146, "propertyName":"gold" },
+                {   "id":3, "x":210, "y":174, "propertyName":"dielectric" }
+            ],
+
+            "bsph4":  
+            [
+                {   "id":0, "x":129, "y":50,  "propertyNa me":"water" },
+                {   "id":1, "x":130, "y":126, "propertyName":"Acrysol EL 135" },
+                {   "id":2, "x":150, "y":130, "propertyName":"Capmul MCM" },
+                {   "id":3, "x":175, "y":140, "propertyName":"nisoldipine" }
+            ],
+
+            "oct3":
+            [
+                {   "id":0, "x":135, "y":122, "propertyName":"cadmium selenide" },
+                {   "id":1, "x":162, "y":121, "propertyName":"zinc sulfide" },
+                {   "id":2, "x":170, "y":146, "propertyName":"PC" },
+                {   "id":3, "x":175, "y":165, "propertyName":"zinc sulfide" }
+            ],
+
+            "sphi4":
+            [
+                {   "id":0, "x":154, "y":105, "propertyName":"myristyl alcohol" },
+                {   "id":1, "x":155, "y":125, "propertyName":"doxorubicin" },
+                {   "id":2, "x":182, "y":131, "propertyName":"gold" },
+                {   "id":3, "x":205, "y":149, "propertyName":"dielectric" }
+            ]
+    }
+}

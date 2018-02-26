@@ -2,17 +2,20 @@ canvas = document.querySelector("canvas")
 c = canvas.getContext("2d")
 imageArray = 
 [
-	{"src":"./Images/sph4.svg"},
-	{"src":"./Images/bsph4.svg"},
-	{"src":"./Images/oct3.svg"},
-	{"src":"./Images/sphi4.svg"}
+	{"src":"./Images/sph4.svg" , "obj":"sph4" },
+	{"src":"./Images/bsph4.svg" , "obj":"bsph4"}, 
+	{"src":"./Images/oct3.svg" , "obj":"oct3"},
+	{"src":"./Images/sphi4.svg" , "obj":"sphi4" }
 ]
 
 random = Math.floor((Math.random() * 4))
 imageSource = imageArray[random].src
-jsonPath = (imageSource.substring(9)).replace("svg","json")
+randomObj = imageArray[random].obj
+
+console.log("Random :"+random)
 
 $(document).ready ->
+
 	initialize()
 	@canvasColor = '#666666'
 initialize = () ->
@@ -35,11 +38,12 @@ resizeCanvas = () ->
 	
 redraw = () ->
 
-	$.getJSON('JSON/'+jsonPath,(data) ->
-		$.each(data,(index,value) ->
-			xcord = data[index].x
-			ycord = data[index].y
-			idcord = data[index].id
+	$.getJSON('JSON/data.json',(data) -> 
+		$.each(data.pivotpoints[randomObj],(index,value) ->
+			
+			xcord = data.pivotpoints[randomObj][index].x
+			ycord = data.pivotpoints[randomObj][index].y
+			idcord = data.pivotpoints[randomObj][index].id
 			topHeight = 25 + idcord * 40
 			$("a.CompositionImage_link[pivotpoint="+idcord+"]").css("top":ycord-7,"left":xcord-7)
 			c.beginPath()
@@ -61,7 +65,7 @@ redraw = () ->
 			c.stroke()
 		)
 )
-	
+
 # /*========================================== Label Click ==================================================*/	
 
 $('.Label_listItem , .CompositionImage_link').on "click", () -> 
@@ -90,9 +94,10 @@ $('.Label_listItem , .CompositionImage_link').on "click", () ->
 			$(compElement).addClass("Component_details--disable")
 
 	if($(window).width() > 900) 
-		$.getJSON('JSON/'+jsonPath,(data) ->
-			$.each(data,(index,value) ->
-				idcord=data[index].id.toString()
+		$.getJSON('JSON/data.json',(data) -> 
+			$.each(data.pivotpoints[randomObj],(index,value) ->
+
+				idcord=data.pivotpoints[randomObj][index].id.toString()
 				topHeight=25+idcord*40
 				if (activePoint == idcord)
 					c.beginPath()
@@ -141,9 +146,10 @@ $('.CrossButton , .Component_heading h3').on 'click', () ->
 		else
 			$(elements).removeClass('active')
 
-	$.getJSON('JSON/'+jsonPath,(data) ->	
-		$.each(data,(index,value) ->	
-			idcord=data[index].id
+	$.getJSON('JSON/data.json',(data) -> 
+		$.each(data.pivotpoints[randomObj],(index,value) ->
+
+			idcord=data.pivotpoints[randomObj][index].id
 			topHeight=25+idcord*40	
 			c.clearRect(500,topHeight-10,100,20)
 		)
