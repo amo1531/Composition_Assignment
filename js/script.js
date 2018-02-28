@@ -29,7 +29,12 @@
     }
 
     Composition.prototype.init = function() {
-      return this.initialize();
+      this.initialize();
+      return $(window).on("resize", (function(_this) {
+        return function() {
+          return _this.resizeCanvas();
+        };
+      })(this));
     };
 
     $('.Label_listItem , .CompositionImage_link').on("click", function() {
@@ -136,27 +141,26 @@
 
     Composition.prototype.initialize = function() {
       $('.SphereImage').attr('src', this.imageSource);
-      $(window).bind('resize', (function(_this) {
-        return function() {
-          return _this.resizeCanvas;
-        };
-      })(this));
       return this.resizeCanvas();
     };
 
     Composition.prototype.resizeCanvas = function() {
+      console.log("resize");
       canvas.height = 300;
       this.context.strokeStyle = this.canvasColor;
       if ($(window).width() < 900) {
+        console.log("resize mobile");
         canvas.width = 300;
         return this.redraw();
       } else {
+        console.log("resize wide");
         canvas.width = 570;
         return this.redraw();
       }
     };
 
     Composition.prototype.redraw = function() {
+      console.log("redraw");
       return $.getJSON('JSON/data.json', (function(_this) {
         return function(data) {
           return $.each(data.pivotpoints[_this.randomObj], function(index, value) {

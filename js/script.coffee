@@ -17,6 +17,8 @@ window.Composition = class Composition
 		
 	init: ->
 		@initialize()
+		$(window).on "resize", =>
+			@resizeCanvas()
 
 	$('.Label_listItem , .CompositionImage_link').on "click", () -> 
 
@@ -106,23 +108,25 @@ window.Composition = class Composition
 
 	initialize: ->
 		$('.SphereImage').attr('src', @imageSource)
-		$(window).bind('resize',=> @resizeCanvas)
 		@resizeCanvas()
 
 	resizeCanvas: ->
+		console.log "resize"
 		canvas.height = 300
 		@context.strokeStyle = @canvasColor
 		if ($(window).width() < 900) 
+			console.log "resize mobile"
 			canvas.width = 300
 			@redraw()
 		else 
+			console.log "resize wide"
 			canvas.width = 570
 			@redraw()
 		
 	#/* *************************** For canva on page Load ********************************* */#
 		
 	redraw: () ->
-
+		console.log "redraw"
 		$.getJSON('JSON/data.json',(data) => 
 			$.each(data.pivotpoints[@randomObj],(index,value) =>
 				
