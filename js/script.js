@@ -30,114 +30,111 @@
 
     Composition.prototype.init = function() {
       this.initialize();
-      return $(window).on("resize", (function(_this) {
+      $(window).on("resize", (function(_this) {
         return function() {
           return _this.resizeCanvas();
         };
       })(this));
-    };
-
-    $('.Label_listItem , .CompositionImage_link').on("click", function() {
-      var activePoint, className, compElement, compositionSec, elements, i, j, len, len1, pivotpointList;
-      $('.Label_listItem').removeClass('active');
-      $('.CompositionImage_link').removeClass('active');
-      className = $(this).attr('class');
-      activePoint = $(this).attr('pivotpoint');
-      if (className === 'Label_listItem') {
-        pivotpointList = $('.Composition_image').find('.CompositionImage_link');
-      } else {
-        pivotpointList = $('.Label').find('.Label_listItem');
-      }
-      for (i = 0, len = pivotpointList.length; i < len; i++) {
-        elements = pivotpointList[i];
-        if (activePoint === $(elements).attr("pivotpoint")) {
-          $(elements).addClass('active');
-          $(this).toggleClass('active');
-        }
-      }
-      compositionSec = $('.Component_details');
-      for (j = 0, len1 = compositionSec.length; j < len1; j++) {
-        compElement = compositionSec[j];
-        if (activePoint === $(compElement).attr('relpoint')) {
-          $(compElement).removeClass("Component_details--disable");
-        } else {
-          $(compElement).addClass("Component_details--disable");
-        }
-      }
-      if ($(window).width() > 900) {
-        return $.getJSON('JSON/data.json', (function(_this) {
-          return function(data) {
+      $('.Label_listItem , .CompositionImage_link').on("click", (function(_this) {
+        return function(e) {
+          var activePoint, className, compElement, compositionSec, elements, i, j, len, len1, pivotpointList;
+          $('.Label_listItem').removeClass('active');
+          $('.CompositionImage_link').removeClass('active');
+          className = $(e.currentTarget).attr('class');
+          activePoint = $(e.currentTarget).attr('pivotpoint');
+          if (className === 'Label_listItem') {
+            pivotpointList = $('.Composition_image').find('.CompositionImage_link');
+          } else {
+            pivotpointList = $('.Label').find('.Label_listItem');
+          }
+          for (i = 0, len = pivotpointList.length; i < len; i++) {
+            elements = pivotpointList[i];
+            if (activePoint === $(elements).attr("pivotpoint")) {
+              $(elements).addClass('active');
+              $(e.currentTarget).toggleClass('active');
+            }
+          }
+          compositionSec = $('.Component_details');
+          for (j = 0, len1 = compositionSec.length; j < len1; j++) {
+            compElement = compositionSec[j];
+            if (activePoint === $(compElement).attr('relpoint')) {
+              $(compElement).removeClass("Component_details--disable");
+            } else {
+              $(compElement).addClass("Component_details--disable");
+            }
+          }
+          if ($(window).width() > 900) {
+            return $.getJSON('JSON/data.json', function(data) {
+              return $.each(data.pivotpoints[_this.randomObj], function(index, value) {
+                var idcord, topHeight;
+                idcord = data.pivotpoints[_this.randomObj][index].id.toString();
+                topHeight = 25 + idcord * 40;
+                if (activePoint === idcord) {
+                  _this.context.beginPath();
+                  _this.context.moveTo(500, topHeight);
+                  _this.context.lineTo(550, topHeight);
+                  _this.context.arc(550, topHeight, 5, 0, 2 * Math.PI, false);
+                  _this.context.fillStyle = _this.canvasColor;
+                  _this.context.fill();
+                  return _this.context.stroke();
+                } else {
+                  return _this.context.clearRect(500, topHeight - 10, 100, 20);
+                }
+              });
+            });
+          }
+        };
+      })(this));
+      return $('.CrossButton , .Component_heading h3').on('click', (function(_this) {
+        return function(e) {
+          var activePoint, className, labelList, pivotpointList;
+          className = $(e.currentTarget).attr('class');
+          activePoint = $(e.currentTarget).parent().parent().attr('relpoint');
+          labelList = $('.Composition_image').find('.Label_listItem');
+          pivotpointList = $('.Composition_image').find('.CompositionImage_link');
+          if (className === 'CrossButton') {
+            $(e.currentTarget).parent().parent().addClass('Component_details--disable');
+            $(e.currentTarget).parent().find(".Component_wrapper").css({
+              "display": "none"
+            });
+          } else {
+            $(e.currentTarget).parent().parent().removeClass("Component_details--disable");
+            $(e.currentTarget).parent().parent().siblings('div').addClass("Component_details--disable");
+          }
+          console.log("act" + activePoint);
+          $.each(labelList, function(index, obj) {
+            if (activePoint === $(obj).attr('pivotpoint')) {
+              if (className === 'CrossButton') {
+                return $(obj).removeClass('active');
+              } else {
+                return $(obj).addClass('active');
+              }
+            } else {
+              return $(obj).removeClass('active');
+            }
+          });
+          $.each(pivotpointList, function(index, obj) {
+            if (activePoint === $(obj).attr('pivotpoint')) {
+              if (className === 'CrossButton') {
+                return $(obj).removeClass('active');
+              } else {
+                return $(obj).addClass('active');
+              }
+            } else {
+              return $(obj).removeClass('active');
+            }
+          });
+          return $.getJSON('JSON/data.json', function(data) {
             return $.each(data.pivotpoints[_this.randomObj], function(index, value) {
               var idcord, topHeight;
               idcord = data.pivotpoints[_this.randomObj][index].id.toString();
               topHeight = 25 + idcord * 40;
-              if (activePoint === idcord) {
-                _this.context.beginPath();
-                _this.context.moveTo(500, topHeight);
-                _this.context.lineTo(550, topHeight);
-                _this.context.arc(550, topHeight, 5, 0, 2 * Math.PI, false);
-                _this.context.fillStyle = _this.canvasColor;
-                _this.context.fill();
-                return _this.context.stroke();
-              } else {
-                return _this.context.clearRect(500, topHeight - 10, 100, 20);
-              }
+              return _this.context.clearRect(500, topHeight - 10, 100, 20);
             });
-          };
-        })(this));
-      }
-    });
-
-    $('.CrossButton , .Component_heading h3').on('click', function() {
-      var activePoint, className, elements, i, j, labelList, len, len1, pivotpointList;
-      className = $(this).attr('class');
-      activePoint = $(this).parent().parent().attr('relpoint');
-      labelList = $('.Composition_image').find('.Label_listItem');
-      pivotpointList = $('.Composition_image').find('.CompositionImage_link');
-      if (className === 'CrossButton') {
-        $(this).parent().parent().addClass('Component_details--disable');
-        $(this).parent().find(".Component_wrapper").css({
-          "display": "none"
-        });
-      } else {
-        $(this).parent().parent().removeClass("Component_details--disable");
-        $(this).parent().parent().siblings('div').addClass("Component_details--disable");
-      }
-      for (i = 0, len = pivotpointList.length; i < len; i++) {
-        elements = pivotpointList[i];
-        if (activePoint === $(elements).attr('pivotpoint')) {
-          if ($(this).attr('class') === 'CrossButton') {
-            $(elements).removeClass('active');
-          } else {
-            $(elements).addClass('active');
-          }
-        } else {
-          $(elements).removeClass('active');
-        }
-      }
-      for (j = 0, len1 = labelList.length; j < len1; j++) {
-        elements = labelList[j];
-        if (activePoint === $(elements).attr('pivotpoint')) {
-          if ($(this).attr('class') === 'CrossButton') {
-            $(elements).removeClass('active');
-          } else {
-            $(elements).addClass('active');
-          }
-        } else {
-          $(elements).removeClass('active');
-        }
-      }
-      return $.getJSON('JSON/data.json', (function(_this) {
-        return function(data) {
-          return $.each(data.pivotpoints[_this.randomObj], function(index, value) {
-            var idcord, topHeight;
-            idcord = data.pivotpoints[_this.randomObj][index].id;
-            topHeight = 25 + idcord * 40;
-            return _this.context.clearRect(500, topHeight - 10, 100, 20);
           });
         };
       })(this));
-    });
+    };
 
     Composition.prototype.initialize = function() {
       $('.SphereImage').attr('src', this.imageSource);
@@ -145,22 +142,18 @@
     };
 
     Composition.prototype.resizeCanvas = function() {
-      console.log("resize");
       canvas.height = 300;
       this.context.strokeStyle = this.canvasColor;
       if ($(window).width() < 900) {
-        console.log("resize mobile");
         canvas.width = 300;
         return this.redraw();
       } else {
-        console.log("resize wide");
         canvas.width = 570;
         return this.redraw();
       }
     };
 
     Composition.prototype.redraw = function() {
-      console.log("redraw");
       return $.getJSON('JSON/data.json', (function(_this) {
         return function(data) {
           return $.each(data.pivotpoints[_this.randomObj], function(index, value) {
