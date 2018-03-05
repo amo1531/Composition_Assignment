@@ -3,6 +3,9 @@ window.Composition = class Composition
 		@canvasColor = '#666666'
 		canvas = document.querySelector("canvas")
 		@context = canvas.getContext("2d")
+		@pivotpointList = $('.Composition_image').find('.CompositionImage_link')
+		@labelList = $('.Composition_image').find('.Label_listItem')
+		@compositionSec=$('.Component_details')
 		imageArray = 
 		[
 			{"src":"./Images/sph4.svg" , "obj":"sph4" },
@@ -21,139 +24,98 @@ window.Composition = class Composition
 			@resizeCanvas()
 
 		$('.Label_listItem , .CompositionImage_link').on "click", (e) => 
-			# console.log @
-			# console.log this
-			# console.log e.target
-			# console.log e.currentTarget
 
-
-			#console.log "random :" + @randomObj
-		
-			$('.Label_listItem').removeClass 'active'
-			$('.CompositionImage_link').removeClass 'active'
-
+			target = $(e.currentTarget)
 			className = $(e.currentTarget).attr('class')
-			activePoint = $(e.currentTarget).attr('pivotpoint')
+			activePoint = $(target).attr('pivotpoint')
 
 			if(className == 'Label_listItem')
-				pivotpointList = $('.Composition_image').find('.CompositionImage_link')
+				@addClass(target,@pivotpointList,activePoint)
 			else
-				pivotpointList = $('.Label').find('.Label_listItem')
-
-			for elements in pivotpointList
-				if activePoint == $(elements).attr("pivotpoint")
-					$(elements).addClass('active')
-					$(e.currentTarget).toggleClass('active')
-
-			compositionSec=$('.Component_details')
-			for compElement in compositionSec
-				if activePoint == $(compElement).attr('relpoint')
-					$(compElement).removeClass("Component_details--disable")
-				else	
-					$(compElement).addClass("Component_details--disable")
-
+				@addClass(target,@labelList,activePoint)
+			
+			@addDisableClass(activePoint,@compositionSec)
+			
 			if($(window).width() > 900) 
-				$.getJSON('JSON/data.json',(data) => 
-					$.each(data.pivotpoints[@randomObj],(index,value) =>
-						idcord=data.pivotpoints[@randomObj][index].id.toString()
-						topHeight=25+idcord*40
-						if (activePoint == idcord)
-							@context.beginPath()
-							@context.moveTo(500,topHeight)
-							@context.lineTo(550,topHeight)
-							@context.arc(550,topHeight,5,0,2 * Math.PI,false)
-							@context.fillStyle = @canvasColor
-							@context.fill()
-							@context.stroke()
-						else
-							@context.clearRect(500,topHeight-10,100,20)
-					)	
-				)
+				@extendLineToComponentDiv(activePoint)
 
 		$('.CrossButton , .Component_heading h3').on 'click', (e) =>
 
 			className = $(e.currentTarget).attr('class')
 			activePoint = $(e.currentTarget).parent().parent().attr('relpoint')
-			labelList = $('.Composition_image').find('.Label_listItem')
-			pivotpointList = $('.Composition_image').find('.CompositionImage_link')
 
 			if (className == 'CrossButton')
 				$(e.currentTarget).parent().parent().addClass('Component_details--disable')
 				$(e.currentTarget).parent().find(".Component_wrapper").css({"display":"none"})
 			else
-				$(e.currentTarget).parent().parent().removeClass("Component_details--disable")
-				$(e.currentTarget).parent().parent().siblings('div').addClass("Component_details--disable")
-			console.log "act" +activePoint
+				@addDisableClass(activePoint,@compositionSec)
+			
+			@activeClassOnCrossAndHeading(activePoint ,@labelList, className)
+			@activeClassOnCrossAndHeading(activePoint ,@pivotpointList, className)
+			@removeExtendedLine()
+			
 
-			$.each(labelList,(index,obj) ->
+	addDisableClass: (active,@targetArray) ->
 
-				if (activePoint == $(obj).attr('pivotpoint'))
-					if(className == 'CrossButton')
-						$(obj).removeClass('active')
-					else
-						$(obj).addClass('active')
-				else
+		$.each(@targetArray,(index,obj) =>
+			if active == $(obj).attr('relpoint')
+				$(obj).removeClass("Component_details--disable")
+			else	
+				$(obj).addClass("Component_details--disable")
+		)
+
+	activeClassOnCrossAndHeading: (active ,@targetArray ,className) ->
+
+		$.each(@targetArray,(index,obj) =>
+			if (active == $(obj).attr('pivotpoint'))
+				if(className == 'CrossButton')
 					$(obj).removeClass('active')
-			)
-
-			$.each(pivotpointList,(index,obj) ->
-
-				if (activePoint == $(obj).attr('pivotpoint'))
-					if(className == 'CrossButton')
-						$(obj).removeClass('active')
-					else
-						$(obj).addClass('active')
 				else
-					$(obj).removeClass('active')
-			)
+					$(obj).addClass('active')
+			else
+				$(obj).removeClass('active')
+		)
 
+	addClass: (target ,@targetArray ,active) ->
 
-			$.getJSON('JSON/data.json',(data) => 
-				$.each(data.pivotpoints[@randomObj],(index,value) =>
+		$('.Label_listItem').removeClass 'active'
+		$('.CompositionImage_link').removeClass 'active'
+		
+		$.each(@targetArray,(index,obj) =>
 
-					idcord=data.pivotpoints[@randomObj][index].id.toString()
-					topHeight=25+idcord*40
+			if (active == $(obj).attr('pivotpoint'))
+				$(obj).addClass('active')
+				$(target).toggleClass('active')
+		)
+
+	extendLineToComponentDiv: (activePoint) ->
+
+		$.getJSON('JSON/data.json',(data) => 
+			$.each(data.pivotpoints[@randomObj],(index,value) =>
+				idcord=data.pivotpoints[@randomObj][index].id.toString()
+				topHeight=25+idcord*40
+				if (activePoint == idcord)
+					@context.beginPath()
+					@context.moveTo(500,topHeight)
+					@context.lineTo(550,topHeight)
+					@context.arc(550,topHeight,5,0,2 * Math.PI,false)
+					@context.fillStyle = @canvasColor
+					@context.fill()
+					@context.stroke()
+				else
 					@context.clearRect(500,topHeight-10,100,20)
-				)
+			)	
+		)
+	removeExtendedLine :->
+
+		$.getJSON('JSON/data.json',(data) => 
+			$.each(data.pivotpoints[@randomObj],(index,value) =>
+
+				idcord=data.pivotpoints[@randomObj][index].id.toString()
+				topHeight=25+idcord*40
+				@context.clearRect(500,topHeight-10,100,20)
 			)
-		# @activeClass(activePoint ,@pivotpointList, className)
-		# @activeClass(activePoint ,@labelList, className)
-
-		# console.log "lables :" +labelList
-		# console.log "pivotpointList : " +pivotpointList 
-		# for elements in pivotpointList
-		# 	console.log "pivotpointList : " +pivotpointList 
-		# 	if activePoint == $(elements).attr('pivotpoint')
-		# 		if ($(this).attr('class') == 'CrossButton')
-		# 			$(elements).removeClass('active')
-		# 		else
-		# 			$(elements).addClass('active')
-		# 	else
-		# 		$(elements).removeClass('active')
-				
-		# for elements in labelList
-		# 	console.log "lables :" +labelList
-		# 	if activePoint == $(elements).attr('pivotpoint')
-		# 		if ($(this).attr('class') == 'CrossButton')
-		# 			$(elements).removeClass('active')
-		# 		else
-		# 			$(elements).addClass('active')
-		# 	else
-		# 		$(elements).removeClass('active')
-
-	# activeClass: (active ,@targetArray,classN) ->
-	# 	console.log "activeClass: "+active
-	# 	console.log "activeClass: "+classN
-
-	# 	$.each(@targetArray,(index,obj) =>
-	# 		if (active == $(obj).attr('pivotpoint'))
-	# 			if(className == 'CrossButton')
-	# 				$(obj).removeClass('active')
-	# 			else
-	# 				$(obj).addClass('active')
-	# 		else
-	# 			$(obj).removeClass('active')
-	# 	)
+		)
 
 	initialize: ->
 
